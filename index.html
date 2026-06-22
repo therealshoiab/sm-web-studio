@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Shoiab Mushtaq | AI-Powered Freelance Web Developer</title>
+  <meta name="title" content="Shoiab Mushtaq | AI-Powered Freelance Web Developer">
+  <meta name="description" content="Hire Shoiab Mushtaq, a premium freelance web developer specializing in AI-integrated, high-speed, SEO-optimized, and premium glassmorphic websites.">
+  <meta name="keywords" content="Freelance Web Developer, AI Web Development, Portfolio Website, E-commerce Stores, SEO Specialist, Custom Web Design, Shoiab Mushtaq">
+  <meta name="author" content="Shoiab Mushtaq">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shoiabmushtaq.com/">
+  <meta property="og:title" content="Shoiab Mushtaq | AI-Powered Freelance Web Developer">
+  <meta property="og:description" content="Hire Shoiab Mushtaq, a premium freelance web developer specializing in AI-integrated, high-speed, SEO-optimized, and premium glassmorphic websites.">
+  <meta property="og:image" content="https://shoiabmushtaq.com/assets/images/og-home.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://shoiabmushtaq.com/">
+  <meta property="twitter:title" content="Shoiab Mushtaq | AI-Powered Freelance Web Developer">
+  <meta property="twitter:description" content="Hire Shoiab Mushtaq, a premium freelance web developer specializing in AI-integrated, high-speed, SEO-optimized, and premium glassmorphic websites.">
+  <meta property="twitter:image" content="https://shoiabmushtaq.com/assets/images/og-home.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <!-- Page-Specific Inline Styles for Hero Aesthetics -->
+  <style>
+    /* Hero Section Specifics */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+      min-height: calc(100vh - 120px);
+    }
+    @media (max-width: 991px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+        padding-top: 4rem;
+      }
+    }
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+    @media (max-width: 991px) {
+      .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .hero-btns {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 991px) {
+      .hero-btns {
+        justify-content: center;
+      }
+      .hero-stats {
+        justify-content: center;
+      }
+      .hero-3d-card {
+        transform: none !important;
+      }
+      .hero-3d-card:hover {
+        transform: none !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-btns {
+        flex-direction: column;
+      }
+    }
+    
+    /* 3D Floating Mockup Graphic */
+    .hero-graphic-container {
+      position: relative;
+      width: 100%;
+      height: 450px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+    }
+    .hero-3d-card {
+      width: 100%;
+      max-width: 380px;
+      min-height: 380px;
+      height: auto;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(var(--glass-blur));
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      padding: 2.25rem;
+      transform: rotateY(-15deg) rotateX(10deg);
+      transition: transform var(--transition-slow);
+      position: relative;
+    }
+    .hero-3d-card:hover {
+      transform: rotateY(0deg) rotateX(0deg) scale(1.03);
+    }
+    .card-header-bar {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 1.75rem;
+    }
+    .circle-btn {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .circle-red { background-color: #ef4444; }
+    .circle-yellow { background-color: #f59e0b; }
+    .circle-green { background-color: #10b981; }
+    
+    .card-code-block {
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: var(--accent-3);
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: left; /* Ensure code text stays left-aligned on mobile */
+    }
+    .card-metric-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(var(--accent-1-rgb), 0.1);
+      border: 1px solid rgba(var(--accent-1-rgb), 0.3);
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius-md);
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-md);
+      animation: float-pill 4s infinite ease-in-out alternate;
+    }
+    .card-active-users {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-md);
+      position: absolute;
+      top: -15px;
+      left: -20px;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-md);
+      animation: float-pill 4s infinite ease-in-out alternate-reverse;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    @keyframes float-pill {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-12px); }
+    }
+
+    /* Trusted By Ticker */
+    .trusted-ticker {
+      display: flex;
+      overflow: hidden;
+      user-select: none;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--glass-border);
+      border-bottom: 1px solid var(--glass-border);
+      margin-top: 2rem;
+    }
+    .trusted-track {
+      display: flex;
+      gap: 6rem;
+      white-space: nowrap;
+      animation: ticker-scroll 30s linear infinite;
+    }
+    .trusted-logo {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 800;
+      opacity: 0.3;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+      transition: opacity var(--transition-fast);
+    }
+    .trusted-logo:hover {
+      opacity: 0.7;
+    }
+    @keyframes ticker-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
+    /* FAQ Specific Style overrides */
+    .faq-summary {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    /* Responsive overrides for 3D Hero card graphic elements */
+    @media (max-width: 480px) {
+      .hero-graphic-container {
+        height: 320px;
+      }
+      .hero-3d-card {
+        width: calc(100% - 40px);
+        max-width: 290px;
+        min-height: 270px;
+        height: auto;
+        padding: 1.25rem;
+      }
+      .card-code-block {
+        padding: 0.75rem;
+        font-size: 0.75rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.4;
+      }
+      .card-metric-pill {
+        right: -10px;
+        bottom: -15px;
+        padding: 0.5rem 0.85rem;
+        font-size: 0.8rem;
+      }
+      .card-active-users {
+        left: -10px;
+        top: -15px;
+        padding: 0.4rem 0.75rem;
+        font-size: 0.75rem;
+      }
+      .trusted-track {
+        gap: 3rem;
+      }
+    }
+  </style>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Shoiab Mushtaq - AI-Powered Web Developer",
+      "image": "https://shoiabmushtaq.com/assets/images/og-home.jpg",
+      "url": "https://shoiabmushtaq.com",
+      "telephone": "",
+      "email": "therealshoiabmushtaq@gmail.com",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "India"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://instagram.com/placeholder_shoiab",
+        "https://facebook.com/placeholder_shoiab",
+        "https://x.com/placeholder_shoiab"
+      ]
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader-logo">SM <span class="text-gradient">WEB STUDIO</span></div>
+    <div class="loader-bar-container">
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+  <!-- Background Gradients Mesh -->
+  <div class="bg-mesh-container">
+    <div class="bg-mesh-glow bg-glow-1"></div>
+    <div class="bg-mesh-glow bg-glow-2"></div>
+    <div class="bg-mesh-glow bg-glow-3"></div>
+  </div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress"></div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        SM <span class="text-gradient">WEB STUDIO</span>
+        <span class="logo-dot"></span>
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <label class="theme-switch" aria-label="Toggle Theme">
+          <input type="checkbox" class="theme-switch-input">
+          <span class="theme-switch-slider"></span>
+        </label>
+        <a href="contact.html" class="btn btn-primary btn-sm">Hire Me</a>
+        <div class="mobile-nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" style="padding-top: 10rem; padding-bottom: 5rem;">
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <h1 class="hero-title">AI-Powered <br><span class="text-gradient">Web Developer</span></h1>
+        <p class="hero-subtitle">Hello, I'm Shoiab Mushtaq. I engineer premium, ultra-fast websites integrating conversational AI, cutting-edge glassmorphism styles, and conversion rate optimizations.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-primary">Start a Project</a>
+          <a href="portfolio.html" class="btn btn-secondary">Explore Work</a>
+        </div>
+        
+        <!-- Live Hero Stats -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h4><span class="stat-counter" data-target="98">0</span>%</h4>
+            <p>Conversions Increase</p>
+          </div>
+          <div class="stat-item">
+            <h4><span class="stat-counter" data-target="100">0</span>%</h4>
+            <p>Client Satisfaction</p>
+          </div>
+          <div class="stat-item">
+            <h4>&lt;<span class="stat-counter" data-target="1">0</span>s</h4>
+            <p>Average Load Time</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Card Animation Graphic -->
+      <div class="hero-graphic-container reveal reveal-zoom">
+        <div class="hero-3d-card">
+          <!-- Active Users Badge inside the 3D card wrapper to inherit rotation and prevent viewport overflow -->
+          <div class="card-active-users">
+            <span style="display:inline-block; width:8px; height:8px; background-color:#10b981; border-radius:50%; margin-right:4px;"></span>
+            AI Agent: Online
+          </div>
+          <div class="card-header-bar">
+            <span class="circle-btn circle-red"></span>
+            <span class="circle-btn circle-yellow"></span>
+            <span class="circle-btn circle-green"></span>
+          </div>
+          <div style="font-weight:800; font-size:1.5rem; margin-bottom:1.5rem;" class="text-gradient">shoiab_ai.js</div>
+          <div class="card-code-block">
+            const agent = new AIAgent();<br>
+            await agent.analyzeSEO();<br>
+            await agent.optimizeUX({<br>
+            &nbsp;&nbsp;aesthetic: "Glassmorphism",<br>
+            &nbsp;&nbsp;loadingTime: "0.3s"<br>
+            });
+          </div>
+          <div style="color:var(--text-secondary); font-size:0.85rem; font-weight: 500;">
+            🚀 Fully Responsive Web App Core loaded successfully.
+          </div>
+          <!-- Performance Metric Pill inside the 3D card wrapper to inherit rotation and prevent viewport overflow -->
+          <div class="card-metric-pill">
+            <svg style="width:20px; height:20px; fill:var(--accent-1);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            <div>
+              <div style="font-size:0.7rem; color:var(--text-muted); text-transform:uppercase;">Performance</div>
+              <div style="font-size:0.9rem; font-weight:800;">100% Score</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted By Ticker Section -->
+  <section id="trusted" style="padding: 2rem 0; overflow:hidden;">
+    <div class="trusted-ticker">
+      <div class="trusted-track">
+        <span class="trusted-logo">STRIPE</span>
+        <span class="trusted-logo">OPENAI</span>
+        <span class="trusted-logo">VERCEL</span>
+        <span class="trusted-logo">FIGMA</span>
+        <span class="trusted-logo">GITHUB</span>
+        <span class="trusted-logo">WEBFLOW</span>
+        <!-- Duplicated to enable infinite scroll loop -->
+        <span class="trusted-logo">STRIPE</span>
+        <span class="trusted-logo">OPENAI</span>
+        <span class="trusted-logo">VERCEL</span>
+        <span class="trusted-logo">FIGMA</span>
+        <span class="trusted-logo">GITHUB</span>
+        <span class="trusted-logo">WEBFLOW</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview Section -->
+  <section id="services">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 5rem;" class="reveal">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Premium <span class="text-gradient">Web Services</span></h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">High-end code meets intelligent architectures to deliver modern commercial outcomes.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- AI Web Apps -->
+        <div class="glass-card service-card reveal">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l2.79-2.79C10.09 18.68 11.03 19 12 19c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7z"/><path d="M12 6c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6.2c-1.21 0-2.2-1-2.2-2.2 0-1.21.99-2.2 2.2-2.2 1.21 0 2.2.99 2.2 2.2 0 1.2-.99 2.2-2.2 2.2z"/></svg>
+          </div>
+          <h3>AI Web Development</h3>
+          <p>Integration of intelligent language models, cognitive chatbots, custom automated databases, and vector API connectors to supercharge operations.</p>
+          <ul class="service-features-list">
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> OpenAI/Claude API Integrations</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Custom Retrieval-Augmented Agents</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Natural Language Interface tools</li>
+          </ul>
+          <a href="services.html" class="btn-link">Learn More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+        </div>
+
+        <!-- E-Commerce Stores -->
+        <div class="glass-card service-card reveal" style="transition-delay: 0.1s;">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.21 9l-4.38-6.56c-.19-.28-.51-.44-.83-.44s-.64.16-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.88 1.46h13.08c.88 0 1.65-.62 1.88-1.46l2.54-9.27L23 10c0-.55-.45-1-1-1h-4.79zM9 9l3-4.5L15 9H9zm3 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+          </div>
+          <h3>E-commerce Solutions</h3>
+          <p>Ultra-responsive online retail storefronts built from scratch using dynamic cart caching and optimized secure checkout architectures.</p>
+          <ul class="service-features-list">
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Custom Stripe checkout systems</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Dynamic state-persisted carts</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Lightening fast product filtering</li>
+          </ul>
+          <a href="services.html" class="btn-link">Learn More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+        </div>
+
+        <!-- Custom Corporate Portals -->
+        <div class="glass-card service-card reveal" style="transition-delay: 0.2s;">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          </div>
+          <h3>Business Websites</h3>
+          <p>Beautiful web structures that project executive presence, establish brand trust, and generate inbound clients with absolute reliability.</p>
+          <ul class="service-features-list">
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Custom SEO-rich structures</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> High-converting funnel setups</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Premium Glassmorphic grids</li>
+          </ul>
+          <a href="services.html" class="btn-link">Learn More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 3.5rem;" class="reveal">
+        <a href="services.html" class="btn btn-secondary">View All 9 Services</a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- How I Work (Development Process) -->
+  <section id="process">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 5rem;" class="reveal">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">The Development <span class="text-gradient">Blueprint</span></h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">A structured process focusing on client collaboration, clean code practices, and swift execution.</p>
+      </div>
+
+      <div class="process-timeline">
+        <!-- Step 1 -->
+        <div class="process-step reveal">
+          <div class="process-step-content glass-card">
+            <span style="font-weight:700; color:var(--accent-1); text-transform:uppercase; font-size:0.8rem; letter-spacing:1px;">Phase 01</span>
+            <h3 style="margin: 0.5rem 0 1rem 0; font-size:1.35rem;">Discovery & Strategy</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem;">Aligning your business objectives, target demographics, and core feature scopes into a solid, structured project plan.</p>
+          </div>
+          <div class="process-step-node">1</div>
+          <div class="process-step-empty"></div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-step reveal">
+          <div class="process-step-content glass-card">
+            <span style="font-weight:700; color:var(--accent-3); text-transform:uppercase; font-size:0.8rem; letter-spacing:1px;">Phase 02</span>
+            <h3 style="margin: 0.5rem 0 1rem 0; font-size:1.35rem;">Information Architecture</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem;">Structuring site maps, user flows, and wireframes to establish a clean and intuitive conversion funnel.</p>
+          </div>
+          <div class="process-step-node" style="border-color: var(--accent-3);">2</div>
+          <div class="process-step-empty"></div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-step reveal">
+          <div class="process-step-content glass-card">
+            <span style="font-weight:700; color:var(--accent-2); text-transform:uppercase; font-size:0.8rem; letter-spacing:1px;">Phase 03</span>
+            <h3 style="margin: 0.5rem 0 1rem 0; font-size:1.35rem;">Premium UI/UX Design</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem;">Designing custom visual interfaces with dark/light mode harmonies, tailored typography, and a modern glassmorphic theme.</p>
+          </div>
+          <div class="process-step-node" style="border-color: var(--accent-2);">3</div>
+          <div class="process-step-empty"></div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="process-step reveal">
+          <div class="process-step-content glass-card">
+            <span style="font-weight:700; color:var(--accent-1); text-transform:uppercase; font-size:0.8rem; letter-spacing:1px;">Phase 04</span>
+            <h3 style="margin: 0.5rem 0 1rem 0; font-size:1.35rem;">Semantic HTML Structure</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem;">Building the foundation with strict semantic markup to guarantee layout durability and WCAG AA accessibility compliance.</p>
+          </div>
+          <div class="process-step-node">4</div>
+          <div class="process-step-empty"></div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="process-step reveal">
+          <div class="process-step-content glass-card">
+            <span style="font-weight:700; color:var(--accent-3); text-transform:uppercase; font-size:0.8rem; letter-spacing:1px;">Phase 05</span>
+            <h3 style="margin: 0.5rem 0 1rem 0; font-size:1.35rem;">Custom CSS Styling</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem;">Coding modular layout classes and styling systems from scratch with CSS variables (no bloated CSS frameworks).</p>
+          </div>
+          <div class="process-step-node" style="border-color: var(--accent-3);">5</div>
+          <div class="process-step-empty"></div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="process-step reveal">
+          <div class="process-step-content glass-card">
+            <span style="font-weight:700; color:var(--accent-2); text-transform:uppercase; font-size:0.8rem; letter-spacing:1px;">Phase 06</span>
+            <h3 style="margin: 0.5rem 0 1rem 0; font-size:1.35rem;">Vanilla JS Interactions</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem;">Implementing cursor effects, scroll triggers, spotlight glows, and sliders using fast, library-free JavaScript.</p>
+          </div>
+          <div class="process-step-node" style="border-color: var(--accent-2);">6</div>
+          <div class="process-step-empty"></div>
+        </div>
+
+        <!-- Step 7 -->
+        <div class="process-step reveal">
+          <div class="process-step-content glass-card">
+            <span style="font-weight:700; color:var(--accent-1); text-transform:uppercase; font-size:0.8rem; letter-spacing:1px;">Phase 07</span>
+            <h3 style="margin: 0.5rem 0 1rem 0; font-size:1.35rem;">API & Backend Integrations</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem;">Integrating backend endpoints, serverless databases, or AI APIs (OpenAI/Anthropic) to handle complex dynamic actions.</p>
+          </div>
+          <div class="process-step-node">7</div>
+          <div class="process-step-empty"></div>
+        </div>
+
+        <!-- Step 8 -->
+        <div class="process-step reveal">
+          <div class="process-step-content glass-card">
+            <span style="font-weight:700; color:var(--accent-3); text-transform:uppercase; font-size:0.8rem; letter-spacing:1px;">Phase 08</span>
+            <h3 style="margin: 0.5rem 0 1rem 0; font-size:1.35rem;">SEO & Schema Tuning</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem;">Injecting structured JSON-LD schema tags, meta titles, and canonical links to boost search visibility.</p>
+          </div>
+          <div class="process-step-node" style="border-color: var(--accent-3);">8</div>
+          <div class="process-step-empty"></div>
+        </div>
+
+        <!-- Step 9 -->
+        <div class="process-step reveal">
+          <div class="process-step-content glass-card">
+            <span style="font-weight:700; color:var(--accent-2); text-transform:uppercase; font-size:0.8rem; letter-spacing:1px;">Phase 09</span>
+            <h3 style="margin: 0.5rem 0 1rem 0; font-size:1.35rem;">Performance Calibration</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem;">Minifying scripts, compressing image assets, and tweaking Core Web Vitals to score a clean 100/100 Lighthouse rating.</p>
+          </div>
+          <div class="process-step-node" style="border-color: var(--accent-2);">9</div>
+          <div class="process-step-empty"></div>
+        </div>
+
+        <!-- Step 10 -->
+        <div class="process-step reveal">
+          <div class="process-step-content glass-card">
+            <span style="font-weight:700; color:var(--accent-1); text-transform:uppercase; font-size:0.8rem; letter-spacing:1px;">Phase 10</span>
+            <h3 style="margin: 0.5rem 0 1rem 0; font-size:1.35rem;">Deployment & Launch</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem;">Configuring CDN caching, mapping domain DNS records, establishing security SSL headers, and launching live.</p>
+          </div>
+          <div class="process-step-node">10</div>
+          <div class="process-step-empty"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" style="background-color: var(--bg-secondary); border-top: 1px solid var(--glass-border);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 5rem;" class="reveal">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Client <span class="text-gradient">Endorsements</span></h2>
+        <p style="color: var(--text-secondary);">Here is what business leaders say about working with Shoiab.</p>
+      </div>
+
+      <div class="glass-card reveal" style="max-width: 600px; margin: 0 auto; padding: 4rem 2rem; text-align: center; border: 1px dashed var(--glass-border); border-radius: var(--border-radius); background: var(--glass-bg-hover);">
+        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent-1); opacity: 0.6;">★</div>
+        <p style="color: var(--text-secondary); font-style: italic; font-size: 1.1rem; line-height: 1.6; margin-bottom: 0.5rem;">"Client endorsements are soon to be added."</p>
+        <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-2); font-weight: 700;">SM Web Studio Launching Soon</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive FAQ Preview -->
+  <section id="faq-preview">
+    <div class="container">
+      <div class="faq-summary reveal">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Common <span class="text-gradient">Queries</span></h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin:0 auto;">Got questions about timelines, integrations, or speed optimization? Find quick answers here.</p>
+      </div>
+
+      <div class="faq-grid reveal">
+        <div class="faq-item">
+          <button class="faq-question">
+            Why do you write websites in Vanilla HTML/CSS/JS instead of React?
+            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Vanilla web builds load in milliseconds because there is no JavaScript hydration lag or heavy library overhead. By skipping React or Next.js for projects that don't need them, I secure pure 100/100 Lighthouse performance, which directly lifts SEO ranking and customer checkout conversion percentages.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How does the AI Website Development service work?
+            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              I link your frontend layout to state-of-the-art AI engines (like OpenAI or Anthropic API routes) using secure serverless gateways. This lets you offer tools like conversational AI customer agents, voice-activated navigation controls, dynamic automated content logs, or personalized search panels.
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section id="contact-cta">
+    <div class="container">
+      <div class="glass-card text-center reveal" style="padding: 4rem 2rem; border-color: rgba(var(--accent-1-rgb), 0.25); background: linear-gradient(135deg, rgba(var(--accent-1-rgb), 0.05) 0%, rgba(var(--accent-2-rgb), 0.05) 100%);">
+        <h2 style="font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.1; margin-bottom: 1.5rem;">Ready to Boost Your <br><span class="text-gradient">Digital Velocity?</span></h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2.5rem auto; font-size:1.1rem;">Secure a premium web presence optimized for maximum SEO ranking and visual prestige. Let's schedule a project scoping call.</p>
+        <div style="display:flex; justify-content:center; gap: 1.5rem; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-primary">Book Scoping Call</a>
+          <a href="services.html" class="btn btn-secondary">Explore Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-info">
+          <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
+            SM <span class="text-gradient">WEB STUDIO</span>
+          </a>
+          <p class="footer-desc">Crafting premium, AI-integrated digital interfaces that combine speed, conversions, and aesthetics.</p>
+          <div class="social-links">
+            <a href="https://instagram.com/placeholder_shoiab" class="social-link instagram" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://facebook.com/placeholder_shoiab" class="social-link facebook" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+            </a>
+            <a href="https://x.com/placeholder_shoiab" class="social-link x" aria-label="X">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://threads.net/placeholder_shoiab" class="social-link threads" aria-label="Threads">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Sitemap</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Shoiab Mushtaq. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
+  </div>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner">
+    <h4 class="cookie-banner-title">Cookie Consent</h4>
+    <p class="cookie-banner-text">I use cookies to optimize your experience, analyze site usage, and support my marketing efforts. By clicking Accept, you consent to my cookies.</p>
+    <div class="cookie-banner-btns">
+      <button class="btn btn-primary" id="cookie-accept">Accept</button>
+      <button class="btn btn-secondary" id="cookie-decline">Decline</button>
+    </div>
+  </div>
+
+  <!-- Global Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    // Testimonial simple slide logic
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+    let currentSlide = 0;
+
+    if (slides.length > 0 && prevBtn && nextBtn) {
+      function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+      }
+
+      prevBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      });
+
+      nextBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      });
+    }
+
+    // FAQ Simple toggle logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Close all first
+        faqItems.forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.faq-answer').style.maxHeight = null;
+        });
+
+        if (!isActive) {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
