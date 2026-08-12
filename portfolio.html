@@ -57,9 +57,9 @@
   <!-- Hero Header -->
   <section style="padding-top: 10rem; padding-bottom: 2rem;">
     <div class="container text-center reveal">
-      <span style="font-weight:700; color:var(--accent-1); text-transform:uppercase; font-size:0.85rem; letter-spacing:1.5px; display:block; margin-bottom: 0.5rem;">PROVEN DIGITAL CRAFTSMANSHIP</span>
-      <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem;">Client <span class="text-gradient">Portfolio</span></h1>
-      <p style="color:var(--text-secondary); max-width: 600px; margin: 0 auto; font-size:1.1rem;">Explore my portfolio of custom web applications, client projects, and high-performance digital solutions built with speed, precision, and modern aesthetics.</p>
+      <span style="font-weight:700; color:var(--accent-1); text-transform:uppercase; font-size:0.85rem; letter-spacing:1.5px; display:block; margin-bottom: 0.5rem;">FEATURED WORKS & CLIENT SITES</span>
+      <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem;">My <span class="text-gradient">Portfolio</span></h1>
+      <p style="color:var(--text-secondary); max-width: 600px; margin: 0 auto; font-size:1.1rem;">Explore my portfolio of custom-built restaurant & cafe websites and high-performance web solutions crafted with speed, precision, and modern aesthetics.</p>
     </div>
   </section>
 
@@ -75,7 +75,6 @@
           <button class="filter-btn" data-filter="landing">Landing Pages</button>
           <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
           <button class="filter-btn" data-filter="webapp">Web Applications</button>
-          <button class="filter-btn" data-filter="uiux">UI/UX Design</button>
         </div>
       </div>
 
@@ -83,7 +82,7 @@
       <div class="portfolio-grid">
         
         <!-- Project: Cafe Ertugrul -->
-        <div class="glass-card project-card reveal" data-category="restaurant landing webapp">
+        <div class="glass-card project-card reveal" data-category="restaurant">
           <div class="project-img-container">
             <img src="assets/images/portfolio-ertugrul.png" alt="Cafe Ertugrul" class="project-img">
             <div class="project-overlay">
@@ -117,7 +116,7 @@
         </div>
 
         <!-- Project 1: The Habit Cafe & Grill -->
-        <div class="glass-card project-card reveal" data-category="restaurant landing webapp">
+        <div class="glass-card project-card reveal" data-category="restaurant">
           <div class="project-img-container">
             <img src="assets/images/portfolio-habit.png" alt="The Habit Cafe & Grill" class="project-img">
             <div class="project-overlay">
@@ -151,7 +150,7 @@
         </div>
 
         <!-- Project 2: Meydani Cafe -->
-        <div class="glass-card project-card reveal" data-category="restaurant landing uiux">
+        <div class="glass-card project-card reveal" data-category="restaurant">
           <div class="project-img-container">
             <img src="assets/images/portfolio-meydani.png" alt="Meydani Cafe" class="project-img">
             <div class="project-overlay">
@@ -185,7 +184,7 @@
         </div>
 
         <!-- Project 3: Amberleaf Restaurant -->
-        <div class="glass-card project-card reveal" data-category="restaurant landing uiux">
+        <div class="glass-card project-card reveal" data-category="restaurant">
           <div class="project-img-container">
             <img src="assets/images/portfolio-amberleaf.png" alt="Amberleaf Restaurant" class="project-img">
             <div class="project-overlay">
@@ -216,6 +215,13 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- Empty Category Message -->
+        <div id="no-projects-msg" class="glass-card" style="display:none; text-align:center; grid-column: 1 / -1; padding: 3.5rem 2rem; border-color: rgba(var(--accent-1-rgb), 0.2); opacity: 0; transition: opacity 0.3s ease;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">New Projects Coming Soon</h3>
+          <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto 1.5rem auto;">Projects in this category are currently under active development. Check out my live restaurant & cafe websites in the meantime!</p>
+          <button class="btn btn-primary btn-sm" onclick="document.querySelector('[data-filter=restaurant]').click()">View Restaurants & Cafes</button>
         </div>
 
       </div>
@@ -275,9 +281,10 @@
   <!-- Global scripts -->
   <script src="js/main.js"></script>
   <script>
-    // Portfolio Filtering logic with smooth transitions
+    // Portfolio Filtering logic with smooth transitions & empty state handling
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
+    const emptyMsg = document.getElementById('no-projects-msg');
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -286,10 +293,12 @@
         btn.classList.add('active');
 
         const filterValue = btn.getAttribute('data-filter');
+        let visibleCount = 0;
 
         projectCards.forEach(card => {
           const categories = card.getAttribute('data-category').split(' ');
           if (filterValue === 'all' || categories.includes(filterValue)) {
+            visibleCount++;
             card.style.display = 'flex';
             setTimeout(() => {
               card.style.opacity = '1';
@@ -303,6 +312,18 @@
             }, 300);
           }
         });
+
+        if (emptyMsg) {
+          if (visibleCount === 0) {
+            setTimeout(() => {
+              emptyMsg.style.display = 'block';
+              setTimeout(() => { emptyMsg.style.opacity = '1'; }, 50);
+            }, 300);
+          } else {
+            emptyMsg.style.opacity = '0';
+            setTimeout(() => { emptyMsg.style.display = 'none'; }, 300);
+          }
+        }
       });
     });
   </script>
