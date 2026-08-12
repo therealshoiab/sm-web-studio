@@ -302,12 +302,40 @@ body.light-theme .glass-card:hover {
 
 .portfolio-filters {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
   gap: 0.75rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0.5rem 0.25rem 0.85rem 0.25rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--accent-1-rgb), 0.3) transparent;
+}
+
+@media (min-width: 992px) {
+  .portfolio-filters {
+    justify-content: center;
+  }
+}
+
+.portfolio-filters::-webkit-scrollbar {
+  height: 4px;
+}
+
+.portfolio-filters::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.portfolio-filters::-webkit-scrollbar-thumb {
+  background: rgba(var(--accent-1-rgb), 0.3);
+  border-radius: 4px;
 }
 
 .filter-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
   padding: 0.6rem 1.25rem;
   border-radius: var(--radius-full);
   font-size: 0.9rem;
