@@ -633,7 +633,7 @@
       <div id="testimonials-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
         
         <!-- Testimonial 1 -->
-        <div class="glass-card reveal" style="padding: 2.5rem 2rem;">
+        <div class="glass-card" style="padding: 2.5rem 2rem;">
           <div style="color: #ffc107; margin-bottom: 1rem; font-size: 1.1rem;">★★★★★</div>
           <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem; font-style: italic; font-size: 0.95rem;">
             "The performance optimization Shoiab did for Cafe Ertugrul is incredible. Our menu loads instantly, and we've seen a noticeable uptick in customer engagement."
@@ -645,7 +645,7 @@
         </div>
 
         <!-- Testimonial 2 -->
-        <div class="glass-card reveal" style="padding: 2.5rem 2rem;">
+        <div class="glass-card" style="padding: 2.5rem 2rem;">
           <div style="color: #ffc107; margin-bottom: 1rem; font-size: 1.1rem;">★★★★★</div>
           <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem; font-style: italic; font-size: 0.95rem;">
             "Shoiab built a flawless digital presence for Jhelum Cafe. Immersive design, high speed, and exactly matching our premium riverside vibe."
@@ -657,7 +657,7 @@
         </div>
 
         <!-- Testimonial 3 -->
-        <div class="glass-card reveal" style="padding: 2.5rem 2rem;">
+        <div class="glass-card" style="padding: 2.5rem 2rem;">
           <div style="color: #ffc107; margin-bottom: 1rem; font-size: 1.1rem;">★★★★★</div>
           <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem; font-style: italic; font-size: 0.95rem;">
             "Excellent dynamic reservation layouts on The Habit Cafe & Grill. Extremely responsive on mobile devices and loads in less than a second."
@@ -671,7 +671,7 @@
       </div>
 
       <!-- Action Button -->
-      <div style="text-align: center;" class="reveal">
+      <div style="text-align: center;">
         <button id="open-endorsement-btn" class="btn btn-primary">Leave an Endorsement</button>
       </div>
     </div>
@@ -943,7 +943,7 @@
       function renderEndorsementCard(data, prepend = true) {
         if (!container) return;
         const card = document.createElement('div');
-        card.className = 'glass-card reveal';
+        card.className = 'glass-card';
         card.style.padding = '2.5rem 2rem';
         
         const starsStr = '★'.repeat(data.rating) + '☆'.repeat(5 - data.rating);
