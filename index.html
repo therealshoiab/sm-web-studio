@@ -675,8 +675,8 @@
   </section>
 
   <!-- Endorsement Submission Modal -->
-  <div id="endorsement-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 10, 12, 0.85); z-index: 1000; align-items: center; justify-content: center; backdrop-filter: blur(12px); padding: 1.5rem; opacity: 0; transition: opacity 0.3s ease;">
-    <div class="glass-card" style="width: 100%; max-width: 500px; padding: 2.5rem; position: relative; border-color: rgba(var(--accent-1-rgb), 0.25); transform: scale(0.9); transition: transform 0.3s ease;" id="endorsement-modal-content">
+  <div id="endorsement-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 10, 12, 0.85); z-index: 1000; align-items: flex-start; justify-content: center; backdrop-filter: blur(12px); padding: 2.5rem 1rem; overflow-y: auto; opacity: 0; transition: opacity 0.3s ease;">
+    <div class="glass-card" style="width: 100%; max-width: 500px; padding: 2.5rem; position: relative; border-color: rgba(var(--accent-1-rgb), 0.25); transform: scale(0.9); transition: transform 0.3s ease; margin-top: auto; margin-bottom: auto;" id="endorsement-modal-content">
       
       <!-- Close modal -->
       <button id="close-endorsement-btn" aria-label="Close Modal" style="position: absolute; top: 1.25rem; right: 1.25rem; background: transparent; border: none; color: var(--text-secondary); font-size: 1.75rem; cursor: pointer; transition: color 0.2s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'">&times;</button>
