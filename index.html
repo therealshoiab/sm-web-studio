@@ -835,6 +835,7 @@
     </div>
   </div>
 
+
   <!-- EmailJS Integration -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
@@ -848,7 +849,7 @@
   <!-- Global Scripts -->
   <script src="js/main.js"></script>
   <script>
-    // Client Endorsements Interactive Modal & Local Storage Saving Script
+    // Client Endorsements Interactive Modal & Cloudflare D1 API Script
     document.addEventListener('DOMContentLoaded', () => {
       const modal = document.getElementById('endorsement-modal');
       const openBtn = document.getElementById('open-endorsement-btn');
@@ -965,8 +966,25 @@
         }
       }
 
-      // Load Saved Endorsements from localStorage
-      function loadSavedEndorsements() {
+      // Load endorsements from database (or fallback to local storage)
+      async function loadEndorsements() {
+        try {
+          const response = await fetch('/api/endorsements');
+          if (response.ok) {
+            const data = await response.json();
+            if (data && data.length > 0) {
+              container.innerHTML = ''; // Clear default static cards
+              data.forEach(item => {
+                renderEndorsementCard(item, false);
+              });
+              return; // Loaded from Database API successfully
+            }
+          }
+        } catch (err) {
+          console.warn("D1 Database API read unavailable. Falling back to local storage:", err);
+        }
+        
+        // Fallback Local Storage load
         const saved = JSON.parse(localStorage.getItem('sm_testimonials') || '[]');
         saved.forEach(data => {
           renderEndorsementCard(data, true);
@@ -984,7 +1002,7 @@
 
       // Form Submit handler
       if (form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
           e.preventDefault();
           
           const nameInput = document.getElementById('end-name');
@@ -999,20 +1017,40 @@
             message: msgInput.value.trim()
           };
 
-          // Temporarily disable submit button & show loading state
+          // Disable submit button & show loading state
           const originalText = submitBtn.innerHTML;
           submitBtn.disabled = true;
           submitBtn.innerHTML = 'Posting Endorsement...';
 
-          // 1. Save Locally
-          const saved = JSON.parse(localStorage.getItem('sm_testimonials') || '[]');
-          saved.push(data);
-          localStorage.setItem('sm_testimonials', JSON.stringify(saved));
+          let success = false;
 
-          // 2. Render Live Instantly
+          // 1. Try to Save to Cloudflare D1 Global Database API
+          try {
+            const response = await fetch('/api/endorsements', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+            });
+            if (response.ok) {
+              success = true;
+            }
+          } catch (err) {
+            console.warn("D1 Database API write unavailable. Saving locally:", err);
+          }
+
+          // 2. Fallback to Local Storage if Database fails or is not configured
+          if (!success) {
+            const saved = JSON.parse(localStorage.getItem('sm_testimonials') || '[]');
+            saved.push(data);
+            localStorage.setItem('sm_testimonials', JSON.stringify(saved));
+          }
+
+          // 3. Render Live Instantly
           renderEndorsementCard(data, true);
 
-          // 3. Email Notification to Owner (reusing existing Inquiry email template service)
+          // 4. Send Email Notification to Owner via EmailJS
           const emailParams = {
             from_name: `[NEW ENDORSEMENT] ${data.name}`,
             name: data.name,
@@ -1046,17 +1084,16 @@
               submitBtn.disabled = false;
               submitBtn.innerHTML = originalText;
               closeModal();
-              // Testimonial still shows in UI because it is saved locally
               if (window.showToast) {
-                window.showToast("Endorsement posted locally", "info");
+                window.showToast(success ? "Endorsement posted successfully!" : "Endorsement posted locally", "success");
               } else {
-                alert("Endorsement posted locally.");
+                alert(success ? "Endorsement posted successfully!" : "Endorsement posted locally.");
               }
             });
         });
       }
 
-      loadSavedEndorsements();
+      loadEndorsements();
     });
 
     // FAQ Simple toggle logic

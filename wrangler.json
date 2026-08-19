@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sm-web-studio",
+  "compatibility_date": "2024-01-01",
+  "pages_build_output_dir": "./",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sm-web-studio-db",
+      "database_id": "b6567dd2-433a-40fb-a7da-a01bffb70ce1"
+    }
+  ]
+}

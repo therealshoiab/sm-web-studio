@@ -10,3 +10,6 @@ Thumbs.db
 *.njsproj
 *.sln
 *.swp
+.wrangler/
+wrangler-debug.log
+
