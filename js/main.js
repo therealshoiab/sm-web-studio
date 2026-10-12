@@ -254,22 +254,57 @@ function initCookieBanner() {
 
   if (!banner || !acceptBtn) return;
 
-  // Show banner if consent not given
-  const consent = localStorage.getItem('cookieConsent');
-  if (!consent) {
+  const CONSENT_KEY = 'cookieConsent';
+
+  function getCookie(name) {
+    try {
+      const match = document.cookie.match(new RegExp('(^|;\\s*)' + name + '=([^;]*)'));
+      return match ? decodeURIComponent(match[2]) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function setCookie(name, val) {
+    try {
+      document.cookie = name + '=' + encodeURIComponent(val) + '; max-age=31536000; path=/; SameSite=Lax';
+    } catch (e) {}
+  }
+
+  function getConsent() {
+    try {
+      const val = localStorage.getItem(CONSENT_KEY);
+      if (val) return val;
+    } catch (e) {}
+    return getCookie(CONSENT_KEY);
+  }
+
+  function saveConsent(status) {
+    try {
+      localStorage.setItem(CONSENT_KEY, status);
+    } catch (e) {}
+    setCookie(CONSENT_KEY, status);
+  }
+
+  // Show banner only if no choice is saved
+  if (!getConsent()) {
     setTimeout(() => {
-      banner.classList.add('active');
-    }, 2500); // Wait 2.5s before showing
+      if (!getConsent()) {
+        banner.classList.add('active');
+      }
+    }, 2500);
+  } else {
+    banner.classList.remove('active');
   }
 
   acceptBtn.addEventListener('click', () => {
-    localStorage.setItem('cookieConsent', 'accepted');
+    saveConsent('accepted');
     banner.classList.remove('active');
   });
 
   if (declineBtn) {
     declineBtn.addEventListener('click', () => {
-      localStorage.setItem('cookieConsent', 'declined');
+      saveConsent('declined');
       banner.classList.remove('active');
     });
   }
