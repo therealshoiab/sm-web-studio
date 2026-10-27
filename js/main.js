@@ -191,8 +191,8 @@ function initScrollReveal() {
 
   const observerOptions = {
     root: null,
-    rootMargin: '0px',
-    threshold: 0.15
+    rootMargin: '0px 0px -20px 0px',
+    threshold: 0
   };
 
   const revealObserver = new IntersectionObserver((entries, observer) => {

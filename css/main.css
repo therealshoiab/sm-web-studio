@@ -719,6 +719,13 @@ body.light-theme .theme-toggle-btn .sun-icon {
   transform: translate(0) scale(1);
 }
 
+/* Ensure article content is always fully visible */
+.article-content {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
 /* Parallax Box */
 .parallax-wrap {
   overflow: hidden;
