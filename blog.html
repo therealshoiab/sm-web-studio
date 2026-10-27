@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development & SEO Blog | Srinagar, J&K | SM Web Studio</title>
+  <meta name="title" content="Web Development & SEO Blog | Srinagar, J&K | SM Web Studio">
+  <meta name="description" content="Actionable guides on high-speed web development, Shopify e-commerce, conversion design, and local SEO in Srinagar, Jammu & Kashmir by Shoiab Mushtaq.">
+  <meta name="keywords" content="web developer blog Srinagar, website development Kashmir, local SEO Srinagar, Shopify developer blog, web design advice, Shoiab Mushtaq, SM Web Studio">
+  <meta name="author" content="Shoiab Mushtaq">
+  <link rel="canonical" href="https://smwebstudios.in/blog">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://smwebstudios.in/blog">
+  <meta property="og:title" content="Web Development & SEO Blog | SM Web Studio Srinagar">
+  <meta property="og:description" content="Actionable guides on high-speed web development, Shopify e-commerce, conversion design, and local SEO in Srinagar, Jammu & Kashmir by Shoiab Mushtaq.">
+  <meta property="og:image" content="https://smwebstudios.in/assets/images/og-home.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://smwebstudios.in/blog">
+  <meta property="twitter:title" content="Web Development & SEO Blog | SM Web Studio Srinagar">
+  <meta property="twitter:description" content="Actionable guides on high-speed web development, Shopify e-commerce, conversion design, and local SEO in Srinagar, Jammu & Kashmir by Shoiab Mushtaq.">
+  <meta property="twitter:image" content="https://smwebstudios.in/assets/images/og-home.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+
+  <style>
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+    .blog-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .blog-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent-1);
+      box-shadow: 0 12px 30px rgba(var(--accent-1-rgb), 0.15);
+    }
+    .blog-meta-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      font-size: 0.85rem;
+    }
+    .blog-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      background: rgba(var(--accent-1-rgb), 0.12);
+      color: var(--accent-1);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.75px;
+    }
+    .blog-read-time {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+    .blog-card h2 {
+      font-size: 1.35rem;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+    .blog-card h2 a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .blog-card h2 a:hover {
+      color: var(--accent-1);
+    }
+    .blog-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    .blog-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--glass-border);
+      font-size: 0.85rem;
+    }
+    .blog-author {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .blog-author-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--grad-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+    .blog-link-btn {
+      color: var(--accent-1);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: gap 0.2s ease;
+    }
+    .blog-card:hover .blog-link-btn {
+      gap: 0.6rem;
+    }
+    .blog-filters {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .blog-filter-btn {
+      padding: 0.55rem 1.25rem;
+      border-radius: var(--radius-full);
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+    .blog-filter-btn:hover, .blog-filter-btn.active {
+      background: var(--accent-1);
+      color: #fff;
+      border-color: var(--accent-1);
+    }
+    @media (max-width: 600px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Mesh -->
+  <div class="bg-mesh-container">
+    <div class="bg-mesh-glow bg-glow-1"></div>
+    <div class="bg-mesh-glow bg-glow-2"></div>
+    <div class="bg-mesh-glow bg-glow-3"></div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress"></div>
+  </div>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader-logo">SM <span class="text-gradient">WEB STUDIO</span></div>
+    <div class="loader-bar-container">
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="/" class="logo">
+        SM <span class="text-gradient">WEB STUDIO</span>
+        <span class="logo-dot"></span>
+      </a>
+      <nav class="nav-menu">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/services" class="nav-link">Services</a>
+        <a href="/portfolio" class="nav-link">Portfolio</a>
+        <a href="/blog" class="nav-link active">Blog</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <label class="theme-switch" aria-label="Toggle Theme">
+          <input type="checkbox" class="theme-switch-input">
+          <span class="theme-switch-slider"></span>
+        </label>
+        <a href="/contact" class="btn btn-primary btn-sm">Hire Me</a>
+        <div class="mobile-nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section style="padding-top: 10rem; padding-bottom: 2rem;">
+    <div class="container text-center reveal">
+      <span style="font-weight:700; color:var(--accent-1); text-transform:uppercase; font-size:0.85rem; letter-spacing:1.5px; display:block; margin-bottom: 0.5rem;">Insights & Technical Knowledge</span>
+      <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem;">Engineering & Growth <span class="text-gradient">Blog</span></h1>
+      <p style="color:var(--text-secondary); max-width: 650px; margin: 0 auto; font-size:1.1rem;">Practical guides on high-speed web development, Shopify e-commerce, conversion design, and local SEO for businesses in Srinagar, Kashmir, and worldwide.</p>
+      
+      <!-- Category Filter Pills -->
+      <div class="blog-filters">
+        <button class="blog-filter-btn active" data-filter="all">All Articles</button>
+        <button class="blog-filter-btn" data-filter="local-seo">Local SEO</button>
+        <button class="blog-filter-btn" data-filter="ecommerce">E-Commerce</button>
+        <button class="blog-filter-btn" data-filter="performance">Speed & Code</button>
+        <button class="blog-filter-btn" data-filter="design">Conversion Design</button>
+        <button class="blog-filter-btn" data-filter="ai-tech">AI & Tech</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Listing Grid -->
+  <section style="padding-bottom: 8rem;">
+    <div class="container">
+      <div class="blog-grid">
+
+        <!-- Blog 1: Kashmir Business Website -->
+        <article class="glass-card blog-card reveal" data-category="local-seo">
+          <div class="blog-meta-top">
+            <span class="blog-badge">Local Business</span>
+            <span class="blog-read-time">5 min read</span>
+          </div>
+          <h2><a href="/blog/why-every-business-in-kashmir-needs-a-website">Why Every Business in Srinagar & Kashmir Needs a Professional Website in 2025</a></h2>
+          <p>Discover how local cafes, handicraft exporters, hotels, and retail stores in Kashmir are capturing high-value customers by moving beyond Instagram to a dedicated Google-ranked website.</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-author-avatar">SM</div>
+              <span>Shoiab Mushtaq</span>
+            </div>
+            <a href="/blog/why-every-business-in-kashmir-needs-a-website" class="blog-link-btn">Read &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Blog 2: Shopify vs Custom Ecommerce -->
+        <article class="glass-card blog-card reveal" data-category="ecommerce">
+          <div class="blog-meta-top">
+            <span class="blog-badge">E-Commerce</span>
+            <span class="blog-read-time">6 min read</span>
+          </div>
+          <h2><a href="/blog/shopify-vs-custom-ecommerce-d2c-brands">Shopify vs. Custom E-Commerce: Which Platform Is Best for Growing D2C Brands?</a></h2>
+          <p>An honest engineering comparison of Shopify stores vs custom headless checkouts. Discover which platform delivers higher checkout velocity, lower fees, and better conversion rates.</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-author-avatar">SM</div>
+              <span>Shoiab Mushtaq</span>
+            </div>
+            <a href="/blog/shopify-vs-custom-ecommerce-d2c-brands" class="blog-link-btn">Read &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Blog 3: Website Speed & Conversions -->
+        <article class="glass-card blog-card reveal" data-category="performance">
+          <div class="blog-meta-top">
+            <span class="blog-badge">Core Web Vitals</span>
+            <span class="blog-read-time">6 min read</span>
+          </div>
+          <h2><a href="/blog/how-website-speed-boosts-sales-core-web-vitals">How 0.3s Website Speed Directly Increases Sales & Core Web Vitals</a></h2>
+          <p>Every 100ms of latency costs conversions. Learn why framework-free Vanilla JS architecture outperforms bloated WordPress templates and how sub-second speeds skyrocket revenue.</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-author-avatar">SM</div>
+              <span>Shoiab Mushtaq</span>
+            </div>
+            <a href="/blog/how-website-speed-boosts-sales-core-web-vitals" class="blog-link-btn">Read &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Blog 4: High-Converting Landing Page -->
+        <article class="glass-card blog-card reveal" data-category="design">
+          <div class="blog-meta-top">
+            <span class="blog-badge">Conversion CRO</span>
+            <span class="blog-read-time">5 min read</span>
+          </div>
+          <h2><a href="/blog/high-converting-landing-page-guide">Anatomy of a High-Converting Landing Page: Design, Copy & Psychology</a></h2>
+          <p>The definitive blueprint for high-converting landing pages: magnetic hero propositions, sticky slide-out carts, psychological proof placement, and mobile thumb-friendly layouts.</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-author-avatar">SM</div>
+              <span>Shoiab Mushtaq</span>
+            </div>
+            <a href="/blog/high-converting-landing-page-guide" class="blog-link-btn">Read &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Blog 5: Local SEO Srinagar Playbook -->
+        <article class="glass-card blog-card reveal" data-category="local-seo">
+          <div class="blog-meta-top">
+            <span class="blog-badge">SEO Mastery</span>
+            <span class="blog-read-time">7 min read</span>
+          </div>
+          <h2><a href="/blog/local-seo-ranking-guide-srinagar-jammu-kashmir">The Complete Local SEO Playbook for Srinagar & Jammu & Kashmir Businesses</a></h2>
+          <p>Step-by-step strategies to rank #1 on Google in Srinagar. Master Google Business Profiles, LocalBusiness schema markup, localized keywords, and high-authority local citations.</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-author-avatar">SM</div>
+              <span>Shoiab Mushtaq</span>
+            </div>
+            <a href="/blog/local-seo-ranking-guide-srinagar-jammu-kashmir" class="blog-link-btn">Read &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Blog 6: Restaurant & Cafe Website Guide -->
+        <article class="glass-card blog-card reveal" data-category="design">
+          <div class="blog-meta-top">
+            <span class="blog-badge">Hospitality Web</span>
+            <span class="blog-read-time">5 min read</span>
+          </div>
+          <h2><a href="/blog/restaurant-and-cafe-website-design-guide">7 Must-Have Features Every Modern Restaurant & Cafe Website Needs</a></h2>
+          <p>Insights from designing high-traffic dining websites like The Habit Cafe, Meydani, Jhelum Cafe, and Barnacle Bistro: digital menus, instant booking, and storytelling that packs tables.</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-author-avatar">SM</div>
+              <span>Shoiab Mushtaq</span>
+            </div>
+            <a href="/blog/restaurant-and-cafe-website-design-guide" class="blog-link-btn">Read &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Blog 7: Freelance vs Agency -->
+        <article class="glass-card blog-card reveal" data-category="performance">
+          <div class="blog-meta-top">
+            <span class="blog-badge">Hiring Strategy</span>
+            <span class="blog-read-time">6 min read</span>
+          </div>
+          <h2><a href="/blog/why-hire-freelance-web-developer-vs-agency">Freelance Web Developer vs. Digital Agency: Which Saves You Money & Time?</a></h2>
+          <p>Cut through agency overhead, middle-man account managers, and endless billing. Discover why working directly with an elite freelance web developer yields superior speed, craft, and ROI.</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-author-avatar">SM</div>
+              <span>Shoiab Mushtaq</span>
+            </div>
+            <a href="/blog/why-hire-freelance-web-developer-vs-agency" class="blog-link-btn">Read &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Blog 8: Portfolio Website for Models & Creatives -->
+        <article class="glass-card blog-card reveal" data-category="design">
+          <div class="blog-meta-top">
+            <span class="blog-badge">Portfolio Design</span>
+            <span class="blog-read-time">5 min read</span>
+          </div>
+          <h2><a href="/blog/portfolio-website-guide-models-creatives">How Models, Photographers & Creatives Can Build an Impactful Portfolio Website</a></h2>
+          <p>Lessons from designing editorial showcases for Marsha Ajaz and Jeena Khan: dynamic comp cards, video reels, high-resolution compression, and frictionless agency casting inquiry flows.</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-author-avatar">SM</div>
+              <span>Shoiab Mushtaq</span>
+            </div>
+            <a href="/blog/portfolio-website-guide-models-creatives" class="blog-link-btn">Read &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Blog 9: Website Redesign Checklist -->
+        <article class="glass-card blog-card reveal" data-category="performance">
+          <div class="blog-meta-top">
+            <span class="blog-badge">Audit & Redesign</span>
+            <span class="blog-read-time">6 min read</span>
+          </div>
+          <h2><a href="/blog/website-redesign-checklist-when-is-it-time">When Is It Time to Redesign Your Website? A 10-Point Health Checklist</a></h2>
+          <p>Is your website losing leads? Review the 10 diagnostic warning signs—from mobile layout breakage and slow loading to stale branding—and see how a modern redesign pays for itself.</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-author-avatar">SM</div>
+              <span>Shoiab Mushtaq</span>
+            </div>
+            <a href="/blog/website-redesign-checklist-when-is-it-time" class="blog-link-btn">Read &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Blog 10: AI Website Features -->
+        <article class="glass-card blog-card reveal" data-category="ai-tech">
+          <div class="blog-meta-top">
+            <span class="blog-badge">AI Integration</span>
+            <span class="blog-read-time">7 min read</span>
+          </div>
+          <h2><a href="/blog/integrating-ai-features-into-modern-business-websites">How to Integrate AI Chatbots & Smart Automation into Your Business Website</a></h2>
+          <p>Transform your website into a 24/7 client generation engine. Learn how to connect custom AI agents, automated FAQs, intelligent lead filters, and dynamic user personalization.</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-author-avatar">SM</div>
+              <span>Shoiab Mushtaq</span>
+            </div>
+            <a href="/blog/integrating-ai-features-into-modern-business-websites" class="blog-link-btn">Read &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Strategy Call Consultation Banner -->
+      <div class="glass-card text-center reveal" style="margin-top: 5rem; padding: 4rem 2rem; border-color: rgba(var(--accent-1-rgb), 0.25); background: linear-gradient(135deg, rgba(var(--accent-1-rgb), 0.05) 0%, rgba(var(--accent-2-rgb), 0.05) 100%);">
+        <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 1.25rem;">Have a Web Project in Mind? <br><span class="text-gradient">Let's Build It Right.</span></h2>
+        <p style="color: var(--text-secondary); max-width: 620px; margin: 0 auto 2.5rem auto; font-size:1.05rem;">From ultra-fast custom business websites and Shopify e-commerce setups to local SEO dominance in Srinagar and Jammu & Kashmir, I engineer websites that deliver measurable revenue.</p>
+        <div style="display:flex; justify-content:center; gap: 1.5rem; flex-wrap: wrap;">
+          <a href="/contact" class="btn btn-primary">Book Free Consultation</a>
+          <a href="/portfolio" class="btn btn-secondary">Explore Live Portfolio</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-info">
+          <a href="/" class="logo" style="margin-bottom: 1.5rem;">
+            SM <span class="text-gradient">WEB STUDIO</span>
+          </a>
+          <p class="footer-desc">Crafting premium, AI-integrated digital interfaces that combine speed, conversions, and aesthetics.<br>Serving businesses across Jammu & Kashmir.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/smwebstudios/" class="social-link instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61590818446356" class="social-link facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+            </a>
+            <a href="https://x.com/SMWebStudios" class="social-link x" aria-label="X" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.threads.net/@smwebstudios" class="social-link threads" aria-label="Threads" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Sitemap</h3>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/blog">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Shoiab Mushtaq. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
+  </div>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner">
+    <h4 class="cookie-banner-title">Cookie Consent</h4>
+    <p class="cookie-banner-text">We use cookies to improve your browsing experience and analyze site traffic.</p>
+    <div class="cookie-banner-actions">
+      <button class="btn btn-primary btn-sm cookie-accept">Accept</button>
+      <button class="btn btn-secondary btn-sm cookie-decline">Decline</button>
+    </div>
+  </div>
+
+  <!-- Global scripts -->
+  <script src="/js/main.js"></script>
+  <script>
+    // Blog Category Filter interaction
+    const filterButtons = document.querySelectorAll('.blog-filter-btn');
+    const articles = document.querySelectorAll('.blog-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+
+        articles.forEach(article => {
+          if (filter === 'all' || article.getAttribute('data-category') === filter) {
+            article.style.display = 'flex';
+          } else {
+            article.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

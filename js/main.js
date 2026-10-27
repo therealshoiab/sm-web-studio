@@ -2,6 +2,32 @@
    GLOBAL INTERACTIVE JAVASCRIPT
    (Theme Toggles, Custom Cursor, Spotlight Glow, Counters, Scroll Reveal, Banner)
    ========================================================================== */
+/* CLEAN URL BAR (Remove .html and index.html without page reload) */
+(function cleanUrlBar() {
+  try {
+    const loc = window.location;
+    if (loc.protocol === 'file:') return;
+    let pathname = loc.pathname;
+    let updated = false;
+
+    if (pathname.endsWith('/index.html')) {
+      pathname = pathname.replace(/\/index\.html$/, '/') || '/';
+      updated = true;
+    } else if (pathname === '/index.html' || pathname === 'index.html') {
+      pathname = '/';
+      updated = true;
+    } else if (pathname.endsWith('.html')) {
+      pathname = pathname.replace(/\.html$/, '');
+      updated = true;
+    }
+
+    if (updated) {
+      window.history.replaceState(null, '', pathname + loc.search + loc.hash);
+    }
+  } catch (e) {
+    // Graceful fallback
+  }
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
   initLoadingScreen();
