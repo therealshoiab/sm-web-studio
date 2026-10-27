@@ -188,6 +188,20 @@
       color: #fff;
       border-color: var(--accent-1);
     }
+    body.light-theme .blog-filter-btn {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 15px rgba(31, 38, 135, 0.07), inset 0 1px 1px #fff;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: var(--text-primary);
+    }
+    body.light-theme .blog-filter-btn:hover, body.light-theme .blog-filter-btn.active {
+      background: var(--accent-1);
+      color: #fff;
+      border-color: var(--accent-1);
+      box-shadow: 0 6px 20px rgba(var(--accent-1-rgb), 0.35);
+    }
     @media (max-width: 850px) {
       .blog-filters {
         flex-wrap: nowrap;

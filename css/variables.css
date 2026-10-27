@@ -71,8 +71,8 @@
 
 /* Light Mode Overrides */
 body.light-theme {
-  --bg-primary: #f8fafc;
-  --bg-secondary: #f1f5f9;
+  --bg-primary: #f6f8fc;
+  --bg-secondary: #eef2f9;
   --bg-tertiary: #e2e8f0;
   
   --text-primary: #0f172a;
@@ -89,21 +89,22 @@ body.light-theme {
   --grad-primary: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%);
   --grad-secondary: linear-gradient(135deg, var(--accent-3) 0%, #2563eb 100%);
   --grad-dark: linear-gradient(180deg, rgba(248, 250, 252, 0.8) 0%, #f8fafc 100%);
-  --grad-glow: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.08), transparent 70%);
+  --grad-glow: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.15), transparent 70%);
 
-  --glass-bg: rgba(255, 255, 255, 0.6);
-  --glass-border: rgba(0, 0, 0, 0.06);
-  --glass-border-hover: rgba(0, 0, 0, 0.12);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.06);
-  --glass-blur: 16px;
+  /* High-Fidelity Frosted Glassmorphism for Light Mode */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.9);
+  --glass-border-hover: rgba(var(--accent-1-rgb), 0.45);
+  --glass-shadow: 0 14px 35px -5px rgba(31, 38, 135, 0.12), 0 3px 10px -2px rgba(0, 0, 0, 0.04), inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+  --glass-blur: 20px;
 
-  --header-bg: rgba(248, 250, 252, 0.75);
-  --nav-menu-bg: rgba(241, 245, 249, 0.95);
+  --header-bg: rgba(255, 255, 255, 0.78);
+  --nav-menu-bg: rgba(255, 255, 255, 0.94);
 
-  --card-bg: rgba(255, 255, 255, 0.5);
-  --card-border: rgba(0, 0, 0, 0.05);
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(255, 255, 255, 0.9);
 
-  --input-bg: rgba(0, 0, 0, 0.02);
-  --input-border: rgba(0, 0, 0, 0.08);
+  --input-bg: rgba(255, 255, 255, 0.55);
+  --input-border: rgba(0, 0, 0, 0.1);
   --input-focus-border: var(--accent-1);
 }

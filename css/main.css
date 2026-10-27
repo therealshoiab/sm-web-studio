@@ -150,9 +150,31 @@ h1, h2, h3, h4, h5, h6 {
   animation: float-slow infinite alternate ease-in-out;
 }
 
+body.light-theme {
+  background-color: #f6f8fc;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(6, 182, 212, 0.05) 0px, transparent 60%);
+  background-attachment: fixed;
+}
+
 body.light-theme .bg-mesh-glow {
-  opacity: 0.06;
-  mix-blend-mode: multiply;
+  opacity: 0.32;
+  mix-blend-mode: normal;
+  filter: blur(100px);
+}
+
+body.light-theme .bg-glow-1 {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.42) 0%, rgba(168, 85, 247, 0.22) 50%, transparent 75%);
+}
+
+body.light-theme .bg-glow-2 {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.38) 0%, rgba(6, 182, 212, 0.2) 50%, transparent 75%);
+}
+
+body.light-theme .bg-glow-3 {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.38) 0%, rgba(99, 102, 241, 0.2) 50%, transparent 75%);
 }
 
 .bg-glow-1 {
@@ -206,6 +228,14 @@ body.light-theme .bg-mesh-glow {
   border-radius: var(--radius-md);
   box-shadow: var(--glass-shadow);
   animation: float-rotate 15s infinite linear;
+}
+
+body.light-theme .glass-shape {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(var(--accent-1-rgb), 0.15) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 16px 36px rgba(31, 38, 135, 0.14), inset 0 1px 1px #fff;
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
 }
 
 .shape-1 {
@@ -337,15 +367,17 @@ body.light-theme .loader-bar-container {
 }
 
 body.light-theme .header {
-  background-color: rgba(255, 255, 255, 0.85);
-  border-color: rgba(0, 0, 0, 0.08);
-  box-shadow: 0 10px 30px -5px rgba(31, 38, 135, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 35px -5px rgba(31, 38, 135, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 1);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
 }
 
 body.light-theme .header.sticky {
-  background-color: rgba(255, 255, 255, 0.95);
-  border-color: rgba(var(--accent-1-rgb), 0.3);
-  box-shadow: 0 14px 35px -5px rgba(31, 38, 135, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(var(--accent-1-rgb), 0.35);
+  box-shadow: 0 18px 45px -5px rgba(31, 38, 135, 0.16), 0 0 20px rgba(var(--accent-1-rgb), 0.12), inset 0 1px 1px rgba(255, 255, 255, 1);
 }
 
 /* Blog Capsule Tab Component (Capsular Glassmorphic Tag) */
@@ -406,6 +438,22 @@ body.light-theme .blog-badge {
   background: var(--accent-1);
   color: #fff;
   border-color: var(--accent-1);
+}
+
+body.light-theme .blog-filter-btn {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 15px rgba(31, 38, 135, 0.07), inset 0 1px 1px #fff;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--text-primary);
+}
+
+body.light-theme .blog-filter-btn:hover, body.light-theme .blog-filter-btn.active {
+  background: var(--accent-1);
+  color: #fff;
+  border-color: var(--accent-1);
+  box-shadow: 0 6px 20px rgba(var(--accent-1-rgb), 0.35);
 }
 
 @media (max-width: 850px) {
