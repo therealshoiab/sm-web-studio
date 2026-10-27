@@ -348,6 +348,37 @@ body.light-theme .header.sticky {
   box-shadow: 0 14px 35px -5px rgba(31, 38, 135, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
+/* Blog Capsule Tab Component (Capsular Glassmorphic Tag) */
+.blog-capsule-tab {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: rgba(var(--accent-1-rgb), 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(var(--accent-1-rgb), 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+body.light-theme .blog-capsule-tab {
+  background: rgba(var(--accent-1-rgb), 0.12) !important;
+  border-color: rgba(var(--accent-1-rgb), 0.45) !important;
+  color: var(--accent-1) !important;
+  box-shadow: 0 2px 8px rgba(var(--accent-1-rgb), 0.15) !important;
+}
+
+body.light-theme .blog-badge {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  color: var(--text-secondary) !important;
+}
+
 .header .nav-container {
   width: 100%;
   max-width: 100%;
