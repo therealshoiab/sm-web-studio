@@ -32,7 +32,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 1.75rem;
-      margin-top: 2.5rem;
+      margin-top: 1.25rem;
     }
     .blog-card {
       display: flex;
@@ -203,17 +203,31 @@
       box-shadow: 0 6px 20px rgba(var(--accent-1-rgb), 0.35);
     }
     @media (max-width: 850px) {
+      .blog-hero-section {
+        padding-top: 6.5rem !important;
+        padding-bottom: 0 !important;
+      }
+      .blog-list-section {
+        padding-top: 0.5rem !important;
+        padding-bottom: 4rem !important;
+      }
       .blog-filters {
         flex-wrap: nowrap;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         justify-content: flex-start;
-        padding: 0.5rem 0.25rem 1rem;
+        padding: 0.25rem 0.25rem 0.5rem;
+        margin-top: 1.25rem;
+        margin-bottom: 0;
         scrollbar-width: none;
         -ms-overflow-style: none;
       }
       .blog-filters::-webkit-scrollbar {
         display: none;
+      }
+      .blog-grid {
+        margin-top: 0.5rem;
+        gap: 1.25rem;
       }
     }
     @media (max-width: 600px) {
@@ -271,7 +285,7 @@
     </div>
   </header>
 
-  <section style="padding-top: 9.5rem; padding-bottom: 2rem;">
+  <section class="blog-hero-section" style="padding-top: 8.5rem; padding-bottom: 0;">
     <div class="container text-center reveal">
       <span style="font-weight:700; color:var(--accent-1); text-transform:uppercase; font-size:0.85rem; letter-spacing:1.5px; display:block; margin-bottom: 0.5rem;">Insights & Technical Knowledge</span>
       <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.5rem); margin-bottom: 1.25rem;">Engineering &amp; Growth <span class="text-gradient">Blog</span></h1>
@@ -288,7 +302,7 @@
     </div>
   </section>
 
-  <section style="padding-bottom: 8rem;">
+  <section class="blog-list-section" style="padding-top: 1.25rem; padding-bottom: 8rem;">
     <div class="container">
       <div class="blog-grid">
         <!-- Blog 1: Why Kashmir Businesses Need a Website -->
