@@ -719,11 +719,27 @@ body.light-theme .theme-toggle-btn .sun-icon {
   transform: translate(0) scale(1);
 }
 
-/* Ensure article content is always fully visible */
+/* Ensure article content is always fully visible and nicely spaced */
+.article-header {
+  padding-bottom: 0 !important;
+}
+
+.article-byline {
+  padding-bottom: 1.25rem !important;
+}
+
 .article-content {
   opacity: 1 !important;
   transform: none !important;
   visibility: visible !important;
+  padding-top: 1.5rem !important;
+}
+
+.article-content > *:first-child,
+.article-content h2:first-child,
+.article-content h2:first-of-type,
+.article-content p:first-child {
+  margin-top: 0 !important;
 }
 
 /* Parallax Box */
