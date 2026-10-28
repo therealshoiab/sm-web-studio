@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Process Form (EmailJS API call)
+    // Process Form (WhatsApp Dispatch + EmailJS Backup)
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.innerHTML;
     
@@ -107,62 +107,91 @@ document.addEventListener('DOMContentLoaded', () => {
         <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.2)"></circle>
         <path d="M4 12a8 8 0 018-8V0C5.37 0 0 5.37 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
       </svg>
-      Sending Inquiry...
+      Connecting to WhatsApp...
     `;
 
+    const nameVal = fullName.value.trim();
+    const emailVal = email.value.trim();
+    const phoneVal = phone.value.trim();
+    const companyVal = company ? company.value.trim() : 'N/A';
+    const websiteTypeVal = websiteType ? websiteType.value.trim() : 'N/A';
+    const budgetVal = budget ? budget.value.trim() : 'N/A';
+    const currencyVal = currency ? currency.value.trim().toUpperCase() : 'INR';
+    const messageVal = message.value.trim();
+
+    // 1. WhatsApp Message formatting for 9419600518
+    const whatsappNumber = "919419600518";
+    const whatsappMessage = 
+`🚀 *New Project Inquiry - SM Web Studio*
+
+👤 *Name:* ${nameVal}
+📧 *Email:* ${emailVal}
+📞 *Phone:* ${phoneVal}
+🏢 *Company:* ${companyVal}
+🌐 *Website Type:* ${websiteTypeVal}
+💰 *Budget:* ${budgetVal} ${currencyVal}
+
+📝 *Project Details:*
+${messageVal}`;
+
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+
+    // 2. EmailJS backup dispatch
     const templateParams = {
-      name: fullName.value.trim(),
-      from_name: fullName.value.trim(),
-      user_name: fullName.value.trim(),
-      email: email.value.trim(),
-      from_email: email.value.trim(),
-      user_email: email.value.trim(),
-      phone: phone.value.trim(),
-      phone_number: phone.value.trim(),
-      user_phone: phone.value.trim(),
-      company: company.value.trim(),
-      company_name: company.value.trim(),
-      user_company: company.value.trim(),
-      "website-type": websiteType.value.trim(),
-      website_type: websiteType.value.trim(),
-      website: websiteType.value.trim(),
-      budget: budget.value.trim(),
-      project_budget: budget.value.trim(),
-      user_budget: budget.value.trim(),
-      currency: currency.value.trim(),
-      user_currency: currency.value.trim(),
-      message: message.value.trim(),
-      project_details: message.value.trim(),
-      user_message: message.value.trim()
+      name: nameVal,
+      from_name: nameVal,
+      user_name: nameVal,
+      email: emailVal,
+      from_email: emailVal,
+      user_email: emailVal,
+      phone: phoneVal,
+      phone_number: phoneVal,
+      user_phone: phoneVal,
+      company: companyVal,
+      company_name: companyVal,
+      user_company: companyVal,
+      "website-type": websiteTypeVal,
+      website_type: websiteTypeVal,
+      website: websiteTypeVal,
+      budget: budgetVal,
+      project_budget: budgetVal,
+      user_budget: budgetVal,
+      currency: currencyVal,
+      user_currency: currencyVal,
+      message: messageVal,
+      project_details: messageVal,
+      user_message: messageVal
     };
 
-    emailjs.send('service_tzgpwjd', 'template_qecma34', templateParams)
-      .then((response) => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
+    if (typeof emailjs !== 'undefined') {
+      try {
+        emailjs.send('service_tzgpwjd', 'template_qecma34', templateParams)
+          .then(() => console.log('EmailJS backup sent successfully.'))
+          .catch((err) => console.warn('EmailJS backup error (ignoring):', err));
+      } catch (e) {
+        console.warn('EmailJS error:', e);
+      }
+    }
 
-        if (response.status === 200 || response.text === 'OK') {
-          if (window.showToast) {
-            window.showToast("email has been sent", "success");
-          }
-          contactForm.reset();
-          if (textarea) {
-            textarea.style.height = '';
-          }
-        } else {
-          if (window.showToast) {
-            window.showToast("email not sent", "error");
-          }
-        }
-      })
-      .catch((error) => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
-        console.error("EmailJS Error:", error);
-        if (window.showToast) {
-          window.showToast("email not sent", "error");
-        }
-      });
+    // 3. Open WhatsApp and notify user
+    setTimeout(() => {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnText;
+
+      if (window.showToast) {
+        window.showToast("Inquiry recorded! Opening WhatsApp chat...", "success");
+      }
+
+      const openedWindow = window.open(whatsappUrl, '_blank');
+      if (!openedWindow || openedWindow.closed || typeof openedWindow.closed === 'undefined') {
+        window.location.href = whatsappUrl;
+      }
+
+      contactForm.reset();
+      if (textarea) {
+        textarea.style.height = '';
+      }
+    }, 400);
   });
 
   // Helpers
