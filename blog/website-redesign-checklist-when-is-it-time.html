@@ -108,6 +108,18 @@
     .article-content p:first-child {
       margin-top: 0 !important;
     }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
     .article-content h2 {
       color: var(--text-primary);
       font-size: clamp(1.45rem, 2.8vw, 1.95rem);
@@ -271,7 +283,7 @@
         <span>&bull;</span>
         <span>Srinagar, Jammu & Kashmir</span>
         <span>&bull;</span>
-        <span style="color:var(--accent-1); font-weight:600;">2,116 words</span>
+        <span style="color:var(--accent-1); font-weight:600;">2,117 words</span>
       </div>
     </header>
 
@@ -299,7 +311,7 @@
     <p>Modern web engineering favors decoupled, static-first architectures. Content is managed through modern headless dashboards (like Sanity, Strapi, or Decap), while the frontend is served as pre-rendered static HTML, CSS, and vanilla JS across global edge networks.</p>
     <p>This architectural shift slashes hosting costs to zero, eliminates MySQL database latency, and renders your website practically impervious to brute-force security exploits.</p>
     <h2>The 301 Redirect Architecture: The Unsung Hero of Redesigns</h2>
-    <p>When you restructure your website, URLs frequently change (for example, consolidating `/services/web-design-srinagar.php` to `/services/web-design`). Without an explicit 301 Permanent Redirect, anyone clicking an existing search result or backlink will encounter an infuriating 404 Not Found error.</p>
+    <p>When you restructure your website, URLs frequently change (for example, consolidating <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">/services/web-design-srinagar.php</code> to <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">/services/web-design</code>). Without an explicit 301 Permanent Redirect, anyone clicking an existing search result or backlink will encounter an infuriating 404 Not Found error.</p>
     <p>A 301 redirect instructs search engine bots that a page has permanently moved to a new address, transferring 95% to 99% of the link equity (PageRank) to the new destination.</p>
     <p>We configure server-level rewrite rules and test every single redirect in staging before launch, verifying that Googlebot seamlessly transitions its index without missing a beat.</p>
     <div style="overflow-x:auto; margin: 2.5rem 0;">
@@ -376,7 +388,7 @@
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Tag Manager & Analytics Continuity: Ensure Google Analytics 4, Meta Pixel, and conversion tracking tags fire identically on the new platform.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Database & Customer History Migration: Securely transfer historical client records, order logs, and subscriber databases using encrypted CSV backups.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Responsive Mobile Parity: Test every new page template across multiple real-world iOS and Android screen resolutions prior to domain DNS cutover.</li>
-      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Staging Environment Isolation: Keep the development sandbox password-protected with `noindex` headers to prevent duplicate content indexing.</li>
+      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Staging Environment Isolation: Keep the development sandbox password-protected with <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">noindex</code> headers to prevent duplicate content indexing.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Automated Production Rollback Plan: Maintain an immediate DNS rollback capability in the event of unexpected database or payment gateway issues.</li>
     </ul>
 

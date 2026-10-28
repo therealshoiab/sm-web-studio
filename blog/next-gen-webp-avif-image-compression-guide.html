@@ -108,6 +108,18 @@
     .article-content p:first-child {
       margin-top: 0 !important;
     }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
     .article-content h2 {
       color: var(--text-primary);
       font-size: clamp(1.45rem, 2.8vw, 1.95rem);
@@ -271,7 +283,7 @@
         <span>&bull;</span>
         <span>Srinagar, Jammu & Kashmir</span>
         <span>&bull;</span>
-        <span style="color:var(--accent-1); font-weight:600;">2,152 words</span>
+        <span style="color:var(--accent-1); font-weight:600;">2,147 words</span>
       </div>
     </header>
 
@@ -293,13 +305,13 @@
     <p>Over 97% global browser support makes WebP the essential modern baseline for all digital storefronts.</p>
     <h3>AVIF: The Ultimate Compression Frontier</h3>
     <p>Unrivaled byte-for-byte fidelity that packs high-resolution hero visuals into microscopic 45KB payloads.</p>
-    <h2>The Responsive `<picture>` Element Architecture</h2>
-    <p>Never rely on a single `<img>` tag with a fixed source. Modern frontend engineering requires the HTML5 `<picture>` element with progressive format fallback.</p>
+    <h2>The Responsive <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;picture&gt;</code> Element Architecture</h2>
+    <p>Never rely on a single <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;img&gt;</code> tag with a fixed source. Modern frontend engineering requires the HTML5 <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;picture&gt;</code> element with progressive format fallback.</p>
     <p>The browser evaluates available formats in descending order of efficiency: first attempting to serve the ultra-compact AVIF file. If an older browser does not support AVIF, it seamlessly falls back to WebP. If an ancient legacy browser is detected, it falls back to a standard JPEG.</p>
-    <p>Furthermore, utilize responsive `srcset` and `sizes` attributes: a mobile smartphone with a 390px viewport width downloads a 450px optimized image, while a 4K desktop monitor receives the high-DPI asset, eliminating wasted mobile bandwidth.</p>
+    <p>Furthermore, utilize responsive <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">srcset</code> and <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">sizes</code> attributes: a mobile smartphone with a 390px viewport width downloads a 450px optimized image, while a 4K desktop monitor receives the high-DPI asset, eliminating wasted mobile bandwidth.</p>
     <h2>Automating the Media Pipeline with Modern CLI Tools</h2>
     <p>Manually converting hundreds of product photos in Photoshop is slow, error-prone, and unsustainable for growing businesses.</p>
-    <p>We engineer automated build pipelines using high-performance Node.js image processing libraries like `sharp` and `squoosh`. When an image is uploaded to your media directory, automated scripts batch-convert master assets into responsive AVIF and WebP sizes within seconds.</p>
+    <p>We engineer automated build pipelines using high-performance Node.js image processing libraries like <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">sharp</code> and <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">squoosh</code>. When an image is uploaded to your media directory, automated scripts batch-convert master assets into responsive AVIF and WebP sizes within seconds.</p>
     <p>This automated pipeline guarantees that every single visual asset published to your digital storefront is pre-optimized for sub-second delivery before it ever reaches production.</p>
     <div style="overflow-x:auto; margin: 2.5rem 0;">
       <table style="width:100%; border-collapse:collapse; background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:var(--radius-sm); font-size:0.95rem;">
@@ -343,11 +355,11 @@
     <h2>Eliminating Layout Shifts (CLS) with Aspect-Ratio Attributes</h2>
     <p>Even if an image is compressed down to 20 kilobytes, it can still ruin your Google PageSpeed score if it causes Cumulative Layout Shift (CLS).</p>
     <p>When a browser parses HTML without explicit dimensions, it assigns the image a height of 0px. When the image file finishes downloading, it pops into view, pushing all text and buttons downward and causing layout instability.</p>
-    <p>Always declare explicit `width="..."` and `height="..."` attributes on every image tag. Combined with modern CSS `aspect-ratio: 16 / 9; width: 100%; height: auto;`, the browser reserves the exact layout footprint before the image arrives, guaranteeing a CLS score of 0.00.</p>
+    <p>Always declare explicit <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">width="..."</code> and <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">height="..."</code> attributes on every image tag. Combined with modern CSS <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">aspect-ratio: 16 / 9; width: 100%; height: auto;</code>, the browser reserves the exact layout footprint before the image arrives, guaranteeing a CLS score of 0.00.</p>
     <h2>Progressive Blur-Up Placeholders and Native Lazy Loading</h2>
     <p>Elevate user perceived performance by incorporating progressive blur-up placeholders (LQIP - Low Quality Image Placeholders).</p>
     <p>The browser renders an inline micro-thumbnail or subtle dominant color gradient immediately upon page boot, smoothly cross-fading into the razor-sharp full-resolution asset as it streams into view.</p>
-    <p>Pair this with native browser `loading="lazy"` on all below-the-fold assets, ensuring the browser only requests imagery as the user actually scrolls toward it.</p>
+    <p>Pair this with native browser <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">loading="lazy"</code> on all below-the-fold assets, ensuring the browser only requests imagery as the user actually scrolls toward it.</p>
     <h2>Media Engineering Case Study: How an E-Commerce Jeweler Reduced Page Weight by 78% with AVIF</h2>
     <p>A luxury artisanal jewelry and gemstone brand based in Jaipur was operating a visually stunning catalog website featuring hundreds of high-resolution product macro photographs. However, because product images were uploaded as standard uncompressed JPEGs and PNGs, the average product detail page weighed an astounding 12.4 MB. On mobile cellular connections, product pages took over 7.2 seconds to load.</p>
     <p>The visual lag was devastating: mobile bounce rates hovered above 68%, while prospective buyers abandoned shopping carts before high-resolution diamond clarity photographs could finish rendering. The engineering team deployed an automated next-generation visual optimization pipeline: converting all catalog assets to responsive AVIF and WebP formats.</p>
@@ -360,17 +372,17 @@
     <p>Visual Ergonomics and Perceptual Quality Metrics (SSIM): Professional image compression relies on scientific structural similarity (SSIM) rather than arbitrary file size targets. We calibrate our compression pipelines to maintain SSIM ratings above 0.98, guaranteeing that delicate metal textures and diamond facets remain indistinguishable from uncompressed master RAW photographs.</p>
     <p>Preserving Fine Art and Craft Photography Details: For luxury handicraft and jewelry clients, micro-texture clarity is critical. Our media pipeline utilizes perceptual quantization matrices that preserve high-frequency edge contrasts on fine embroidery threads and precious stone facets, ensuring zero perceived blurriness even on retina displays.</p>
     <h2>Responsive Media Architecture: Implementing Multi-Format Picture Elements with Fallbacks</h2>
-    <p>Modern browsers have diverse image codec support. While modern Chrome, Safari, and Firefox support AVIF and WebP, older legacy browsers require standard fallbacks. We engineer resilient responsive visual architecture utilizing HTML5 `<picture>` tags with nested `<source>` elements.</p>
+    <p>Modern browsers have diverse image codec support. While modern Chrome, Safari, and Firefox support AVIF and WebP, older legacy browsers require standard fallbacks. We engineer resilient responsive visual architecture utilizing HTML5 <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;picture&gt;</code> tags with nested <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;source&gt;</code> elements.</p>
     <p>The browser rendering engine automatically evaluates format support and viewport pixel density, downloading the ultra-lightweight AVIF format if supported, falling back gracefully to WebP, and reserving optimized JPEG strictly for outdated devices, guaranteeing flawless visual rendering across all hardware generations.</p>
-    <p>We engineer edge image delivery utilizing Cloudflare Workers with automated `Accept` header inspection. The edge server dynamically detects whether the requesting client device supports AVIF, WebP, or legacy formats, serving the optimal compressed asset directly from edge memory cache in under 30 milliseconds.</p>
+    <p>We engineer edge image delivery utilizing Cloudflare Workers with automated <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">Accept</code> header inspection. The edge server dynamically detects whether the requesting client device supports AVIF, WebP, or legacy formats, serving the optimal compressed asset directly from edge memory cache in under 30 milliseconds.</p>
     <h2>The Next-Gen Visual Asset Optimization Checklist</h2>
     <p>Audit your website's media pipeline against these professional image optimization benchmarks:</p>
     <ul style="margin-bottom: 2rem; padding-left: 1.5rem;">
-      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Multi-Codec Responsive `<picture>` Elements: Serve AVIF as primary, WebP as secondary, and optimized JPEG as ultimate fallback.</li>
-      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Dynamic Viewport `srcset` Density: Provide 1x, 2x, and mobile-width image variations to avoid serving desktop images to mobile screens.</li>
-      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Explicit `width` and `height` Attributes: Declare intrinsic pixel dimensions on all image tags to permanently eliminate Cumulative Layout Shift (CLS).</li>
-      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> `fetchpriority='high'` on Hero Assets: Instruct browser parsers to fetch the primary above-the-fold image immediately without delay.</li>
-      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Native `loading='lazy'` on Below-the-Fold Media: Defer loading off-screen images until the user scrolls within 300px of their position.</li>
+      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Multi-Codec Responsive <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;picture&gt;</code> Elements: Serve AVIF as primary, WebP as secondary, and optimized JPEG as ultimate fallback.</li>
+      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Dynamic Viewport <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">srcset</code> Density: Provide 1x, 2x, and mobile-width image variations to avoid serving desktop images to mobile screens.</li>
+      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Explicit <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">width</code> and <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">height</code> Attributes: Declare intrinsic pixel dimensions on all image tags to permanently eliminate Cumulative Layout Shift (CLS).</li>
+      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">fetchpriority='high'</code> on Hero Assets: Instruct browser parsers to fetch the primary above-the-fold image immediately without delay.</li>
+      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Native <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">loading='lazy'</code> on Below-the-Fold Media: Defer loading off-screen images until the user scrolls within 300px of their position.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Lossless Metadata Stripping: Strip unnecessary EXIF camera metadata, GPS tags, and color profile bloat to shave extra kilobytes.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Automated Build-Time Compression: Integrate automated Sharp or Squoosh compression scripts into your continuous deployment pipeline.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Edge CDN Image Transformation: Deploy dynamic edge image resizing via Cloudflare Images or BunnyCDN to optimize on-the-fly.</li>
@@ -380,13 +392,13 @@
     <p>Here are comprehensive, transparent answers to the most frequent technical, commercial, and operational dilemmas founders ask regarding next-gen webp & avif image guide:</p>
 
     <h3>1. Do all mobile browsers support AVIF and WebP images?</h3>
-    <p>WebP has over 97% global support across Chrome, Safari, Firefox, and Edge. AVIF is supported by over 93% of modern browsers. By using the `<picture>` tag, older devices automatically receive standard fallbacks.</p>
+    <p>WebP has over 97% global support across Chrome, Safari, Firefox, and Edge. AVIF is supported by over 93% of modern browsers. By using the <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;picture&gt;</code> tag, older devices automatically receive standard fallbacks.</p>
     <h3>2. Will converting our images to WebP reduce their visual quality on retina screens?</h3>
     <p>No. High-quality lossy WebP and AVIF algorithms preserve high-frequency details, sharp edges, and skin tones while eliminating invisible redundant data that bloats file weights.</p>
     <h3>3. What is the best tool for batch-converting images on our computer?</h3>
     <p>Free, open-source tools like Squoosh (by Google) for individual images, or Node.js Sharp CLI scripts for batch-converting entire photo folders in seconds.</p>
     <h3>4. Should our website hero banner be lazy-loaded?</h3>
-    <p>Never lazy-load your hero image. The hero image is your Largest Contentful Paint (LCP) element; it should be preloaded with `<link rel="preload">` and `fetchpriority="high"` for maximum speed.</p>
+    <p>Never lazy-load your hero image. The hero image is your Largest Contentful Paint (LCP) element; it should be preloaded with <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;link rel="preload"&gt;</code> and <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">fetchpriority="high"</code> for maximum speed.</p>
     <h3>5. Can next-gen image optimization improve our Google Ads Quality Score?</h3>
     <p>Yes. Slashing page load times through image compression improves landing page experience scores on Google Ads, lowering your Cost Per Click (CPC) and boosting ad ranking positions.</p>
     <h3>6. Is AVIF format supported by Apple Safari on iPhones?</h3>

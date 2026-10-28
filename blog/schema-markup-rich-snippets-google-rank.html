@@ -108,6 +108,18 @@
     .article-content p:first-child {
       margin-top: 0 !important;
     }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
     .article-content h2 {
       color: var(--text-primary);
       font-size: clamp(1.45rem, 2.8vw, 1.95rem);
@@ -259,7 +271,7 @@
       <div class="article-meta-row">
         <span class="blog-capsule-tab">Blog 35</span>
         <span class="blog-badge">Technical SEO</span>
-        <span class="blog-read-time" style="color:var(--text-muted); font-size:0.85rem;">12 min read</span>
+        <span class="blog-read-time" style="color:var(--text-muted); font-size:0.85rem;">13 min read</span>
       </div>
 
       <h1 class="article-title">Schema Markup & Rich Snippets Guide</h1>
@@ -271,7 +283,7 @@
         <span>&bull;</span>
         <span>Srinagar, Jammu & Kashmir</span>
         <span>&bull;</span>
-        <span style="color:var(--accent-1); font-weight:600;">2,150 words</span>
+        <span style="color:var(--accent-1); font-weight:600;">2,175 words</span>
       </div>
     </header>
 
@@ -280,7 +292,7 @@
 
     <h2>What Is Schema Markup: The Translation Layer Between Code and Googlebot</h2>
     <p>Schema markup is standardized, semantic vocabulary created collaboratively by Google, Microsoft, Yahoo, and Yandex. It is structured JSON-LD (JavaScript Object Notation for Linked Data) code embedded in your HTML that communicates directly with search engine crawlers.</p>
-    <p>Consider the difference: to a crawler, the text '₹1,500' on a page could be an order total, a shipping fee, or a product price. When wrapped in Schema markup as `{ "@type": "Offer", "price": "1500", "priceCurrency": "INR" }`, search engines understand with 100% mathematical certainty that this is an active commercial product offer.</p>
+    <p>Consider the difference: to a crawler, the text '₹1,500' on a page could be an order total, a shipping fee, or a product price. When wrapped in Schema markup as <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">{ "@type": "Offer", "price": "1500", "priceCurrency": "INR" }</code>, search engines understand with 100% mathematical certainty that this is an active commercial product offer.</p>
     <p>Implementing structured schema removes ambiguity, allowing Google to index your business attributes accurately and reward your platform with rich, eye-catching visual search enhancements.</p>
     <div class="article-callout">
       <strong>The Click-Through Rate Multiplier:</strong> Search listings featuring rich snippets (star review ratings, pricing cards, FAQs, availability badges) achieve a 30% to 45% higher click-through rate (CTR) than plain text search links.
@@ -291,18 +303,18 @@
     <p>These visual enhancements dominate screen real estate on mobile devices, building immediate authority and driving high-intent searchers directly to your site over competing listings.</p>
     <h2>The Essential Schema Types Every Commercial Website Needs</h2>
     <p>Depending on your industry, specific Schema.org entity types must be implemented across your site architecture.</p>
-    <p>1. `Organization` and `LocalBusiness`: Defines your legal corporate identity, logo URL, official social media links (`sameAs`), physical address, latitude/longitude coordinates, opening hours, and phone numbers.</p>
-    <p>2. `Product` and `Offer`: For e-commerce catalogs; defines product titles, SKU identifiers, high-res images, pricing in INR, availability status (`InStock`), and aggregate customer star ratings.</p>
-    <p>3. `FAQPage`: Formats frequently asked questions into interactive accordion snippets directly on Google search results, capturing massive mobile screen real estate.</p>
-    <p>4. `Article` and `BlogPosting`: Establishes author authority (E-E-A-T), publication timestamps, headline tags, and primary publisher credentials.</p>
-    <p>5. `BreadcrumbList`: Displays clean, hierarchical navigation breadcrumbs (`Home > Blog > E-Commerce`) in search results rather than messy raw URLs.</p>
+    <p>1. <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">Organization</code> and <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">LocalBusiness</code>: Defines your legal corporate identity, logo URL, official social media links (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">sameAs</code>), physical address, latitude/longitude coordinates, opening hours, and phone numbers.</p>
+    <p>2. <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">Product</code> and <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">Offer</code>: For e-commerce catalogs; defines product titles, SKU identifiers, high-res images, pricing in INR, availability status (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">InStock</code>), and aggregate customer star ratings.</p>
+    <p>3. <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">FAQPage</code>: Formats frequently asked questions into interactive accordion snippets directly on Google search results, capturing massive mobile screen real estate.</p>
+    <p>4. <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">Article</code> and <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">BlogPosting</code>: Establishes author authority (E-E-A-T), publication timestamps, headline tags, and primary publisher credentials.</p>
+    <p>5. <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">BreadcrumbList</code>: Displays clean, hierarchical navigation breadcrumbs (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">Home &gt; Blog &gt; E-Commerce</code>) in search results rather than messy raw URLs.</p>
     <h3>LocalBusiness Entity Resolution</h3>
     <p>Explicitly linking your website to your verified Google Maps coordinates and official social profiles establishes domain prominence.</p>
     <h3>Product Schema with Real-Time Stock Status</h3>
     <p>Communicating real-time pricing and stock availability directly to search engines boosts transactional click velocity.</p>
     <h2>JSON-LD vs. Microdata: Why JSON-LD Is the Gold Standard</h2>
-    <p>Historically, structured data was written using Microdata or RDFa—embedding attributes directly into HTML tags (`<div itemscope itemtype="...">`). This legacy approach resulted in messy, fragile code that broke easily during layout changes.</p>
-    <p>Google explicitly recommends JSON-LD. JSON-LD scripts sit cleanly inside a single `<script type="application/ld+json">` block in the `<head>` of your page.</p>
+    <p>Historically, structured data was written using Microdata or RDFa—embedding attributes directly into HTML tags (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;div itemscope itemtype="..."&gt;</code>). This legacy approach resulted in messy, fragile code that broke easily during layout changes.</p>
+    <p>Google explicitly recommends JSON-LD. JSON-LD scripts sit cleanly inside a single <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;script type="application/ld+json"&gt;</code> block in the <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;head&gt;</code> of your page.</p>
     <p>JSON-LD completely separates your data logic from your visual presentation, making it easier to maintain, faster to debug, and simpler to automate across dynamic templates.</p>
     <div style="overflow-x:auto; margin: 2.5rem 0;">
       <table style="width:100%; border-collapse:collapse; background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:var(--radius-sm); font-size:0.95rem;">
@@ -323,7 +335,7 @@
           <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
             <td style="padding:0.9rem 1.25rem; color:var(--text-primary); font-weight:600;">Code Cleanliness</td>
             <td style="padding:0.9rem 1.25rem; color:var(--text-secondary);">Tangled inside visual HTML markup</td>
-            <td style="padding:0.9rem 1.25rem; color:var(--text-secondary);">Cleanly isolated inside single `<head>` script</td>
+            <td style="padding:0.9rem 1.25rem; color:var(--text-secondary);">Cleanly isolated inside single <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;head&gt;</code> script</td>
           </tr>
           <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
             <td style="padding:0.9rem 1.25rem; color:var(--text-primary); font-weight:600;">Maintenance Fragility</td>
@@ -346,7 +358,7 @@
     <h2>Validating Schema: Eliminating Google Search Console Errors</h2>
     <p>Deploying broken or invalid Schema code provides zero SEO benefit and can trigger manual penalty warnings in Google Search Console.</p>
     <p>Always test your structured data using Google's official Rich Results Test (search.google.com/test/rich-results) and the Schema.org Validator.</p>
-    <p>Ensure every required field is populated: for example, a `Product` schema requires `name`, `image`, and `offers.price`; omitting required attributes flags a critical error that blocks rich snippet generation.</p>
+    <p>Ensure every required field is populated: for example, a <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">Product</code> schema requires <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">name</code>, <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">image</code>, and <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">offers.price</code>; omitting required attributes flags a critical error that blocks rich snippet generation.</p>
     <h2>Topical Authority and Entity SEO in the Age of Generative AI</h2>
     <p>As search engines integrate generative AI (like Google's Search Generative Experience / AI Overviews), structured data is your most direct channel to communicate with AI models.</p>
     <p>AI search engines rely on structured entities and knowledge graphs to understand subject matter relationships. By linking your articles to verified author entities and organization profiles, you signal high Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T).</p>
@@ -358,17 +370,17 @@
     <p>The brand expanded schema markup to include VideoObject and Recipe schema for their culinary products. Video rich snippets appeared on Google search results within two weeks, generating over 14,000 video impressions and driving an additional ₹3.8 Lakhs in direct e-commerce sales.</p>
     <h2>The Mechanics of Rich Snippets: Helping Search Engines Understand Commercial Entities</h2>
     <p>Search engine algorithms have undergone a profound evolution from simple keyword string matching to sophisticated entity understanding. When Googlebot crawls a modern web page, it does not just look for matching words; it attempts to understand the real-world 'Entity' the page represents: Is this a physical business? An e-commerce product? A recipe? An educational course?</p>
-    <p>Schema.org structured data, authored in JSON-LD format, provides search engine spiders with an unambiguous, machine-readable declaration of your content. Instead of forcing Google's natural language processing models to guess whether ₹1,499 represents a product price or a membership fee, structured schema explicitly declares `@type: Product`, `price: 1499`, `priceCurrency: INR`, and `availability: InStock`.</p>
+    <p>Schema.org structured data, authored in JSON-LD format, provides search engine spiders with an unambiguous, machine-readable declaration of your content. Instead of forcing Google's natural language processing models to guess whether ₹1,499 represents a product price or a membership fee, structured schema explicitly declares <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">@type: Product</code>, <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">price: 1499</code>, <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">priceCurrency: INR</code>, and <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">availability: InStock</code>.</p>
     <p>When Google verifies these structured signals, it rewards the listing with high-visibility Rich Results in search: visual product badges, customer review stars, interactive FAQ accordions, and price drop alerts. These rich visual enhancements occupy more physical screen real estate on mobile devices, capturing user attention and dramatically increasing organic click conversion.</p>
     <p>The Synergy Between Structured Data and Core Algorithmic Authority: While schema markup provides explicit data points, its effectiveness is amplified when aligned with high-quality, authoritative on-page content. Search engines verify structured claims against user engagement signals and third-party entity citations, creating a compounding virtuous cycle of organic visibility.</p>
     <h2>JSON-LD Graph Architecture: Linking Interconnected Entities into Unified Knowledge Graphs</h2>
-    <p>Rather than dumping isolated, disconnected schema blocks across different page elements, our engineering methodology constructs a unified, interconnected `@graph` schema tree in the document `<head>`. A single JSON-LD block harmonizes the `Organization`, `WebSite`, `WebPage`, `BreadcrumbList`, and primary content entity (`Product` or `LocalBusiness`).</p>
-    <p>By utilizing Schema.org ID references (`@id: #organization`), we explicitly define hierarchical relationships: stating that this specific WebPage was published by this verified Organization, featuring this specific author, operating at these exact geographic coordinates, providing search engine neural networks with pristine structural clarity.</p>
+    <p>Rather than dumping isolated, disconnected schema blocks across different page elements, our engineering methodology constructs a unified, interconnected <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">@graph</code> schema tree in the document <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;head&gt;</code>. A single JSON-LD block harmonizes the <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">Organization</code>, <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">WebSite</code>, <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">WebPage</code>, <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">BreadcrumbList</code>, and primary content entity (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">Product</code> or <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">LocalBusiness</code>).</p>
+    <p>By utilizing Schema.org ID references (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">@id: #organization</code>), we explicitly define hierarchical relationships: stating that this specific WebPage was published by this verified Organization, featuring this specific author, operating at these exact geographic coordinates, providing search engine neural networks with pristine structural clarity.</p>
     <p>Our schema engine dynamically compiles real-time inventory counts and discounted promotional pricing into JSON-LD scripts at runtime, ensuring that search engine cache snippets reflect live product availability with zero price discrepancies.</p>
     <h2>The Enterprise Structured Schema Implementation Checklist</h2>
     <p>Audit your website code against Google's official structured data guidelines to unlock maximum rich snippet visibility:</p>
     <ul style="margin-bottom: 2rem; padding-left: 1.5rem;">
-      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> JSON-LD Format Exclusivity: Deploy all structured data exclusively via modern JSON-LD `<script type='application/ld+json'>` tags.</li>
+      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> JSON-LD Format Exclusivity: Deploy all structured data exclusively via modern JSON-LD <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;script type='application/ld+json'&gt;</code> tags.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Product & AggregateRating Schema: Include verified ratings, review counts, current pricing, and live inventory availability on all product pages.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> LocalBusiness & GeoCoordinates Schema: Declare physical street addresses, telephone numbers, opening hours, and geographic coordinates.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> FAQPage Interactive Accordion Schema: Embed structured FAQ markup on service pages to command massive vertical search real estate.</li>
@@ -386,13 +398,13 @@
     <h3>2. Can I add FAQ schema to every page on my website?</h3>
     <p>Google restricts FAQ rich snippets to authoritative government, health, and well-known brand websites to prevent spam. However, adding FAQ schema to relevant service and product pages still provides strong topical semantic context to crawlers.</p>
     <h3>3. Where should JSON-LD script blocks be placed in the HTML document?</h3>
-    <p>JSON-LD blocks should ideally be placed in the `<head>` section of your HTML document, although Google supports JSON-LD placed in the `<body>` as well.</p>
+    <p>JSON-LD blocks should ideally be placed in the <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;head&gt;</code> section of your HTML document, although Google supports JSON-LD placed in the <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;body&gt;</code> as well.</p>
     <h3>4. How often does Google update its rich snippets after adding Schema?</h3>
     <p>Once you implement valid Schema markup and request re-indexing via Google Search Console, Google typically processes rich snippets within 4 to 14 days.</p>
     <h3>5. Can Schema markup slow down our website's loading speed?</h3>
     <p>Not at all. JSON-LD is lightweight plaintext data (typically 1KB to 3KB) that search engine parsers read without blocking browser visual rendering.</p>
     <h3>6. What is the difference between JSON-LD and Microdata schema markup?</h3>
-    <p>Microdata embeds schema tags directly inside HTML elements, creating messy, brittle code that is difficult to maintain. JSON-LD is modern JavaScript notation contained inside a clean `<script>` block in the `<head>`, which Google officially recommends as the preferred structured data format.</p>
+    <p>Microdata embeds schema tags directly inside HTML elements, creating messy, brittle code that is difficult to maintain. JSON-LD is modern JavaScript notation contained inside a clean <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;script&gt;</code> block in the <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;head&gt;</code>, which Google officially recommends as the preferred structured data format.</p>
     <h3>7. Will adding Schema markup automatically guarantee rich snippet display in Google?</h3>
     <p>Schema markup makes your website eligible for rich snippets. Google's algorithms dynamically decide whether to render rich snippets based on domain trust, search intent, and query relevance, but having clean schema is the absolute technical prerequisite.</p>
     <h3>8. Can fake or manipulative Schema markup get our website penalized by Google?</h3>

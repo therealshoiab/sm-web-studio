@@ -108,6 +108,18 @@
     .article-content p:first-child {
       margin-top: 0 !important;
     }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
     .article-content h2 {
       color: var(--text-primary);
       font-size: clamp(1.45rem, 2.8vw, 1.95rem);
@@ -288,7 +300,7 @@
     <h2>Targeting Natural Language and Long-Tail Question Queries</h2>
     <p>Voice search optimization requires re-architecting your content around conversational question patterns: Who, What, Where, When, Why, and How.</p>
     <p>Identify the exact spoken questions prospective clients ask: *'How much does a custom website cost in Srinagar?'*, *'Which hotel in Gulmarg has the best snow view?'*, or *'What is the difference between Kani and Sozni Pashmina shawls?'*.</p>
-    <p>Incorporate these natural question strings directly as `<h2>` and `<h3>` headings across your service pages and blog guides, followed immediately by concise, direct 40-word answers that voice assistants can easily extract and read aloud.</p>
+    <p>Incorporate these natural question strings directly as <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;h2&gt;</code> and <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;h3&gt;</code> headings across your service pages and blog guides, followed immediately by concise, direct 40-word answers that voice assistants can easily extract and read aloud.</p>
     <h2>The 'Near Me' Phenomenon and Google Business Profile Synergy</h2>
     <p>A staggering 58% of voice searches on mobile devices have local commercial intent: searching for services 'near me' or within a specific neighborhood.</p>
     <p>When a user asks: *'Find the best cafe near me'*, the voice assistant relies directly on your Google Business Profile (GBP) and on-page LocalBusiness schema to compute distance, operating hours, and review ratings.</p>
@@ -300,7 +312,7 @@
     <h2>Featured Snippets: The Voice Assistant's Reading Source</h2>
     <p>When Google Assistant answers a factual or procedural question, it almost always pulls its spoken answer directly from Google's Position Zero: the Featured Snippet.</p>
     <p>To capture featured snippets, structure your answers with pedagogical clarity: lead with a crisp, direct 2-sentence summary answering the heading question directly, followed by bulleted steps or structured comparison tables.</p>
-    <p>Clean semantic HTML (`<ol>`, `<ul>`, `<table>`) makes it effortless for Google's natural language algorithms to parse and extract your content for voice synthesis.</p>
+    <p>Clean semantic HTML (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;ol&gt;</code>, <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;ul&gt;</code>, <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;table&gt;</code>) makes it effortless for Google's natural language algorithms to parse and extract your content for voice synthesis.</p>
     <div style="overflow-x:auto; margin: 2.5rem 0;">
       <table style="width:100%; border-collapse:collapse; background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:var(--radius-sm); font-size:0.95rem;">
         <caption style="text-align:left; font-weight:700; color:var(--text-primary); margin-bottom:0.75rem; font-size:1.05rem;">Search Paradigm Comparison: Traditional Text Search vs. Modern Voice Search</caption>
@@ -360,15 +372,15 @@
     <p>The Dominance of Natural Language Processing in Voice Query Resolution: Voice search algorithms utilize advanced neural language models (such as Google RankBrain and MUM) to evaluate natural language context. Writing content in an authentic, conversational voice that directly mirrors everyday human speech patterns substantially increases the probability of earning voice assistant answer selections.</p>
     <p>Local Citation Velocity and Spoken Brand Recognition: Search engine voice engines verify physical legitimacy by cross-referencing your business name with verified regional directories. Ensuring your brand name is consistently cited across regional tourism portals and business chambers gives voice assistants absolute confidence to speak your brand as the primary local recommendation.</p>
     <h2>Speakable Schema Architecture: Semantic Markup for Conversational Voice Engines</h2>
-    <p>We engineer specialized semantic content blocks utilizing Schema.org `SpeakableSpecification` markup. This instructs Google Assistant and voice crawlers which exact sentences within an article or service page are optimized for audio text-to-speech synthesis.</p>
+    <p>We engineer specialized semantic content blocks utilizing Schema.org <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">SpeakableSpecification</code> markup. This instructs Google Assistant and voice crawlers which exact sentences within an article or service page are optimized for audio text-to-speech synthesis.</p>
     <p>Content answers are formatted in concise, high-impact introductory paragraphs (under 45 words) that answer the primary user question directly before expanding into detailed nuances, dramatically increasing the probability of earning Google's coveted Featured Snippet Position Zero.</p>
-    <p>We engineer conversational voice content modules with explicit semantic markup and structured definition lists (`<dl>`, `<dt>`, `<dd>`), providing search engine voice parsing algorithms with pristine structural clarity that elevates voice citation probability.</p>
+    <p>We engineer conversational voice content modules with explicit semantic markup and structured definition lists (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;dl&gt;</code>, <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;dt&gt;</code>, <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;dd&gt;</code>), providing search engine voice parsing algorithms with pristine structural clarity that elevates voice citation probability.</p>
     <h2>The Voice Search & Conversational SEO Optimization Checklist</h2>
     <p>Audit your content and technical SEO against these conversational voice search benchmarks:</p>
     <ul style="margin-bottom: 2rem; padding-left: 1.5rem;">
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Conversational Long-Tail Question Headings: Phrase H2 and H3 subheadings as natural spoken questions (e.g., 'How much does it cost to...?').</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Concise Direct-Answer Paragraphs: Provide concise 35-to-45-word answers immediately following question headings to capture Featured Snippets.</li>
-      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Structured Speakable Schema Markup: Implement JSON-LD `Speakable` schema designating audio-friendly summary paragraphs.</li>
+      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Structured Speakable Schema Markup: Implement JSON-LD <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">Speakable</code> schema designating audio-friendly summary paragraphs.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Google Business Profile Proximity Tuning: Ensure operating hours, physical address, and phone numbers are 100% verified for 'near me' searches.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Hyper-Local Conversational Modifiers: Naturally incorporate local landmark phrases ('near Boulevard Road', 'close to TRC Srinagar', 'Downtown').</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Sub-Second Mobile Response Velocity: Voice assistants prioritize lightning-fast websites to provide instantaneous verbal answers.</li>
@@ -386,7 +398,7 @@
     <h3>3. What is the ideal word count for an answer targeted at voice search?</h3>
     <p>The sweet spot for voice search answers is 35 to 50 words. It must be concise enough for an assistant to read comfortably in under 15 seconds.</p>
     <h3>4. Does our website need an FAQ page to rank for voice search?</h3>
-    <p>An FAQ page with structured `FAQPage` schema is one of the most effective ways to capture voice queries, as it explicitly pairs natural spoken questions with direct answers.</p>
+    <p>An FAQ page with structured <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">FAQPage</code> schema is one of the most effective ways to capture voice queries, as it explicitly pairs natural spoken questions with direct answers.</p>
     <h3>5. Will optimizing for voice search hurt our traditional desktop rankings?</h3>
     <p>Not at all. Optimizing for voice search improves clarity, structure, and speed, which directly enhances traditional search rankings and mobile user experience.</p>
     <h3>6. What devices and platforms drive voice search traffic in India?</h3>

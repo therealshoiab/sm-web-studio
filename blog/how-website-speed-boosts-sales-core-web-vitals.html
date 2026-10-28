@@ -108,6 +108,18 @@
     .article-content p:first-child {
       margin-top: 0 !important;
     }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
     .article-content h2 {
       color: var(--text-primary);
       font-size: clamp(1.45rem, 2.8vw, 1.95rem);
@@ -271,7 +283,7 @@
         <span>&bull;</span>
         <span>Srinagar, Jammu & Kashmir</span>
         <span>&bull;</span>
-        <span style="color:var(--accent-1); font-weight:600;">2,275 words</span>
+        <span style="color:var(--accent-1); font-weight:600;">2,273 words</span>
       </div>
     </header>
 
@@ -343,8 +355,8 @@
     </div>
     <h2>Technical Optimization Playbook: Achieving Sub-Second Speeds</h2>
     <p>Achieving true enterprise-grade performance requires methodical engineering across four distinct infrastructure layers.</p>
-    <p>Layer One: Asset Compression. All visual assets must be converted into next-generation AVIF or WebP formats, compressed with lossless algorithms that reduce file size by 75% without perceptible fidelity degradation. Responsive `srcset` attributes ensure mobile devices never download desktop-sized assets.</p>
-    <p>Layer Two: Critical CSS Inlining. Extract the minimal CSS required to render the viewport above the fold and inline it directly into the `<head>` of the HTML document. Non-critical utility styles are deferred asynchronously, eliminating render-blocking warnings entirely.</p>
+    <p>Layer One: Asset Compression. All visual assets must be converted into next-generation AVIF or WebP formats, compressed with lossless algorithms that reduce file size by 75% without perceptible fidelity degradation. Responsive <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">srcset</code> attributes ensure mobile devices never download desktop-sized assets.</p>
+    <p>Layer Two: Critical CSS Inlining. Extract the minimal CSS required to render the viewport above the fold and inline it directly into the <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;head&gt;</code> of the HTML document. Non-critical utility styles are deferred asynchronously, eliminating render-blocking warnings entirely.</p>
     <p>Layer Three: Global Edge CDN Caching. Serving your website from high-performance edge nodes in Mumbai, Delhi, Chennai, and globally brings content physically closer to the user, slashing Time to First Byte (TTFB) to under 80 milliseconds.</p>
     <h2>Monitoring and Maintaining Real-World User Telemetry</h2>
     <p>Website speed is not a one-time project; it requires continuous monitoring. Synthesized lab tests (like running a single test on GTmetrix or PageSpeed Insights) only tell part of the story. You must track Real User Monitoring (RUM) data collected from actual visitors across different devices and geographic locations.</p>
@@ -356,7 +368,7 @@
     <h2>Decoding INP: Why Interaction to Next Paint is the New Frontier of Conversion Optimization</h2>
     <p>While web developers have spent years obsessing over initial page load metrics like First Contentful Paint (FCP), Google's recent replacement of First Input Delay (FID) with Interaction to Next Paint (INP) has fundamentally rewritten the rules of technical optimization. INP measures responsiveness across the entire lifespan of a user's visit—not just the first click.</p>
     <p>When an online shopper taps a color swatch, expands an FAQ accordion, or clicks 'Add to Bag', they expect instant tactile visual confirmation. If your website is executing heavy background JavaScript—such as ad retargeting pixels, session recording scripts, or unoptimized framework re-renders—the browser cannot paint the next visual frame. The user taps the button repeatedly out of frustration, often adding duplicate items or abandoning the checkout altogether.</p>
-    <p>To achieve a 'Good' INP score (under 200 milliseconds), developers must aggressively break up long tasks on the main JavaScript thread. Techniques include utilizing `requestAnimationFrame` for UI updates, delegating background computations to Web Workers, and throttling high-frequency event listeners like scroll and resize. The result is a tactile, buttery-smooth browsing experience that mimics a native iOS or Android application.</p>
+    <p>To achieve a 'Good' INP score (under 200 milliseconds), developers must aggressively break up long tasks on the main JavaScript thread. Techniques include utilizing <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">requestAnimationFrame</code> for UI updates, delegating background computations to Web Workers, and throttling high-frequency event listeners like scroll and resize. The result is a tactile, buttery-smooth browsing experience that mimics a native iOS or Android application.</p>
     <p>By enforcing strict performance budgets during continuous integration, every future code addition is automatically checked to ensure it does not regress these critical sub-200ms visual response targets.</p>
     <h2>DOM Scheduling Architecture: Breaking Long Tasks with Yielding Micro-Tasks</h2>
     <p>To prevent Interaction to Next Paint (INP) degradation during complex UI interactions, modern web applications must yield the main thread regularly. When processing heavy operations—such as filtering product catalogs or rendering multi-tier pricing calculators—monolithic JavaScript functions cause long tasks exceeding 50ms, freezing the browser interface.</p>
@@ -368,7 +380,7 @@
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Ensure Largest Contentful Paint (LCP) renders under 1.8 seconds on 4G mobile networks by preloading primary hero assets.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Eliminate Cumulative Layout Shift (CLS) by declaring explicit width and height attributes on all image, video, and iframe tags.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Keep Interaction to Next Paint (INP) under 150ms by refactoring or eliminating blocking third-party analytics and chat widgets.</li>
-      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Inline critical CSS directly within `<style>` blocks in the document head; defer all non-critical utility stylesheets.</li>
+      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Inline critical CSS directly within <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;style&gt;</code> blocks in the document head; defer all non-critical utility stylesheets.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Replace raster graphics (PNG, JPEG) with modern AVIF and WebP formats, reducing visual payload weights by 60% to 85%.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Enable Gzip or Brotli compression across all textual server responses (HTML, CSS, JavaScript, JSON, SVG).</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Audit third-party script execution; load non-essential marketing tags strictly via Google Tag Manager with delayed execution triggers.</li>

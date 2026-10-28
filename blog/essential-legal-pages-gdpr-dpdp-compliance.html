@@ -108,6 +108,18 @@
     .article-content p:first-child {
       margin-top: 0 !important;
     }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
     .article-content h2 {
       color: var(--text-primary);
       font-size: clamp(1.45rem, 2.8vw, 1.95rem);
@@ -293,7 +305,7 @@
     <p>4. Shipping & Delivery Policy: Details courier partners (Shiprocket, Delhivery), transit timelines (e.g. 3-7 business days across India), shipping charges, and handling of lost parcels.</p>
     <h2>The Cookie Consent Architecture: Why Annoying Popups Are Broken</h2>
     <p>Most websites implement cookie banners terribly: aggressive modals that block the entire screen, flashing on every page reload even after the user clicked 'Accept', or loading tracking cookies before the user has even made a choice.</p>
-    <p>A compliant, elegant cookie banner operates under explicit engineering principles: 1. It only loads if no prior consent choice is recorded; 2. It stores user choice under a persistent, unified `localStorage` key (with a 1-year fallback first-party cookie); 3. It never flashes or shifts page layout.</p>
+    <p>A compliant, elegant cookie banner operates under explicit engineering principles: 1. It only loads if no prior consent choice is recorded; 2. It stores user choice under a persistent, unified <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">localStorage</code> key (with a 1-year fallback first-party cookie); 3. It never flashes or shifts page layout.</p>
     <p>Crucially, marketing and tracking cookies (like Meta Pixel or Google Ads tags) must remain blocked until the user explicitly clicks 'Accept', respecting user privacy while maintaining full regulatory compliance.</p>
     <h3>Zero Layout Shift Consent Modals</h3>
     <p>Fixed-bottom glassmorphic banners that notify users unobtrusively without blocking navigation or hurting Core Web Vitals.</p>

@@ -108,6 +108,18 @@
     .article-content p:first-child {
       margin-top: 0 !important;
     }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
     .article-content h2 {
       color: var(--text-primary);
       font-size: clamp(1.45rem, 2.8vw, 1.95rem);
@@ -271,7 +283,7 @@
         <span>&bull;</span>
         <span>Srinagar, Jammu & Kashmir</span>
         <span>&bull;</span>
-        <span style="color:var(--accent-1); font-weight:600;">2,134 words</span>
+        <span style="color:var(--accent-1); font-weight:600;">2,136 words</span>
       </div>
     </header>
 
@@ -287,7 +299,7 @@
     </div>
     <h2>Technical Comparison: Razorpay vs. Cashfree vs. PhonePe Payment Gateway</h2>
     <p>Choosing the right payment gateway requires balancing developer ergonomics, transaction success rates, settlement speed, and fee structures.</p>
-    <p>Razorpay remains the industry standard for developer documentation, comprehensive webhooks, and slick UI checkout modals (`checkout.js`). Its automated retry logic and smart card routing deliver industry-leading success rates, though transaction fees are typically standard at 2% + GST.</p>
+    <p>Razorpay remains the industry standard for developer documentation, comprehensive webhooks, and slick UI checkout modals (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">checkout.js</code>). Its automated retry logic and smart card routing deliver industry-leading success rates, though transaction fees are typically standard at 2% + GST.</p>
     <p>Cashfree has emerged as a powerhouse for scaling D2C brands, offering lower transaction fees on high-volume accounts, superior instant refund capabilities, and rapid vendor split-payment payouts.</p>
     <p>PhonePe Payment Gateway leverages its immense consumer base to provide near-zero failure rates on native PhonePe transactions, often offering aggressive zero-fee promotional onboarding for growing merchants.</p>
     <h3>Razorpay: Developer Maturity & Reliability</h3>

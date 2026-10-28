@@ -108,6 +108,18 @@
     .article-content p:first-child {
       margin-top: 0 !important;
     }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
     .article-content h2 {
       color: var(--text-primary);
       font-size: clamp(1.45rem, 2.8vw, 1.95rem);
@@ -271,7 +283,7 @@
         <span>&bull;</span>
         <span>Srinagar, Jammu & Kashmir</span>
         <span>&bull;</span>
-        <span style="color:var(--accent-1); font-weight:600;">2,099 words</span>
+        <span style="color:var(--accent-1); font-weight:600;">2,103 words</span>
       </div>
     </header>
 
@@ -345,8 +357,8 @@
     <p>Organize supportive product information into clean, tactile accordion drawers: 1. Description & Story; 2. Material Specifications & Craftsmanship; 3. Sizing & Fit Guide; 4. Shipping & Hassle-Free Returns.</p>
     <p>Accordions keep the visual interface compact and approachable, allowing interested buyers to deep-dive into specific details without overwhelming casual browsers.</p>
     <h2>ProductSchema Markup: Dominating Google Shopping Search</h2>
-    <p>To ensure your products appear prominently in Google Shopping carousels with star ratings and pricing, your product page code must incorporate Google's specialized `Product` and `Offer` schema structured data.</p>
-    <p>This code communicates your exact price in INR, real-time stock availability (`InStock`), SKU numbers, and aggregate customer star ratings directly to Google's crawlers.</p>
+    <p>To ensure your products appear prominently in Google Shopping carousels with star ratings and pricing, your product page code must incorporate Google's specialized <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">Product</code> and <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">Offer</code> schema structured data.</p>
+    <p>This code communicates your exact price in INR, real-time stock availability (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">InStock</code>), SKU numbers, and aggregate customer star ratings directly to Google's crawlers.</p>
     <p>Structured product schema earns rich visual search enhancements, capturing high-intent shoppers searching Google for your exact product categories.</p>
     <h2>CRO Case Study: How an Indian D2C Apparel Brand Boosted PDP Conversion by 58%</h2>
     <p>A scaling direct-to-consumer apparel and lifestyle brand in India was driving over 85,000 monthly visitors to their product detail pages (PDP) via Meta and Google Shopping campaigns. However, despite high ad spend, their conversion rate was stuck at 1.4%, resulting in an unsustainable customer acquisition cost (CAC) that ate away at their operating margins.</p>
@@ -390,7 +402,7 @@
     <h3>4. What is the best placement for the customer reviews section on mobile?</h3>
     <p>Display average star ratings directly beneath the product title above the fold, and position the full customer photo review gallery directly below the primary accordion drawers.</p>
     <h3>5. How does a sticky cart bar interact with mobile browsers?</h3>
-    <p>Our sticky bars are engineered with CSS `position: sticky` and safe-area insets (`env(safe-area-inset-bottom)`), ensuring they float comfortably above mobile browser navigation bars without overlap.</p>
+    <p>Our sticky bars are engineered with CSS <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">position: sticky</code> and safe-area insets (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">env(safe-area-inset-bottom)</code>), ensuring they float comfortably above mobile browser navigation bars without overlap.</p>
     <h3>6. Should an e-commerce PDP have both 'Add to Cart' and 'Buy Now' buttons?</h3>
     <p>Yes. 'Add to Cart' caters to multi-item catalog shoppers, while a high-contrast 'Buy Now' button allows impulse single-item buyers to bypass the cart drawer and launch direct UPI payment in seconds.</p>
     <h3>7. How does displaying delivery dates instead of shipping days improve conversion?</h3>

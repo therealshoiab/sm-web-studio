@@ -108,6 +108,18 @@
     .article-content p:first-child {
       margin-top: 0 !important;
     }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
     .article-content h2 {
       color: var(--text-primary);
       font-size: clamp(1.45rem, 2.8vw, 1.95rem);
@@ -271,7 +283,7 @@
         <span>&bull;</span>
         <span>Srinagar, Jammu & Kashmir</span>
         <span>&bull;</span>
-        <span style="color:var(--accent-1); font-weight:600;">2,105 words</span>
+        <span style="color:var(--accent-1); font-weight:600;">2,108 words</span>
       </div>
     </header>
 
@@ -357,7 +369,7 @@
     <h2>Streaming Video Optimization: Overcoming the Bandwidth Trap Without Sacrificing Visual Immersion</h2>
     <p>The fundamental paradox of visual creative portfolios is balancing pristine cinematic fidelity against instant page loading speed. When a filmmaker uploads raw 50 MB MP4 video showreels or uncompressed TIFF photography portfolios, mobile cellular connections buckle. The page stutters, browser memory spikes, and high-net-worth commercial clients click away in frustration.</p>
     <p>Elite portfolio engineering resolves this challenge through adaptive video streaming pipelines. We encode video reels into modern WebM and MP4 container formats using H.265/HEVC and AV1 compression codecs, producing silky 1080p and 4K visual loops that weigh less than 3.5 MB—a 90% reduction in network payload without perceptible compression artifacts.</p>
-    <p>Video backgrounds are configured with `playsinline`, `muted`, `loop`, and `preload='metadata'` attributes, preventing aggressive mobile operating systems from opening clunky native video players. Video playback is paused automatically when elements scroll out of the viewport using lightweight Intersection Observers, preserving GPU battery life and guaranteeing buttery 60fps scrolling.</p>
+    <p>Video backgrounds are configured with <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">playsinline</code>, <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">muted</code>, <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">loop</code>, and <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">preload='metadata'</code> attributes, preventing aggressive mobile operating systems from opening clunky native video players. Video playback is paused automatically when elements scroll out of the viewport using lightweight Intersection Observers, preserving GPU battery life and guaranteeing buttery 60fps scrolling.</p>
     <p>For static photography galleries, our responsive grid architecture pairs AVIF encoding with dynamic color-matching placeholders (blur-up technique), ensuring the layout paints instantly while full-resolution imagery hydrates progressively.</p>
     <p>Client Onboarding and Pre-Production Questionnaires: An elite visual portfolio does not just showcase past films; it qualifies incoming inquiries. We embed structured creative brief forms where prospective clients specify wedding dates, venue aesthetics, desired film moods (cinematic documentary, vintage Super-8, high-fashion editorial), and estimated production budgets, allowing filmmakers to craft bespoke proposals within hours.</p>
     <h2>Media Asset Pipeline: Cloudflare Stream Integration and Client Proofing Galleries</h2>

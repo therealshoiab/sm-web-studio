@@ -108,6 +108,18 @@
     .article-content p:first-child {
       margin-top: 0 !important;
     }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
     .article-content h2 {
       color: var(--text-primary);
       font-size: clamp(1.45rem, 2.8vw, 1.95rem);
@@ -271,7 +283,7 @@
         <span>&bull;</span>
         <span>Srinagar, Jammu & Kashmir</span>
         <span>&bull;</span>
-        <span style="color:var(--accent-1); font-weight:600;">2,219 words</span>
+        <span style="color:var(--accent-1); font-weight:600;">2,218 words</span>
       </div>
     </header>
 
@@ -299,7 +311,7 @@
     <p>Eliminating fragile plugin dependencies frees business owners from paying thousands of rupees every month in defensive maintenance fees.</p>
     <h2>Mobile Responsiveness: Bloated Page Builders vs. Semantic CSS</h2>
     <p>Most WordPress agencies rely on visual page builders like Elementor, Divi, or WPBakery. While these visual editors allow non-developers to drag-and-drop elements, they generate atrocious HTML output.</p>
-    <p>A simple headline that requires 1 line of clean code (`<h2>Our Services</h2>`) becomes wrapped inside 15 nested `<div>` containers with thousands of unused inline CSS rules. Mobile browsers struggle to calculate DOM layout trees with thousands of nodes, resulting in severe layout jitter and sluggish scrolling.</p>
+    <p>A simple headline that requires 1 line of clean code (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;h2&gt;Our Services&lt;/h2&gt;</code>) becomes wrapped inside 15 nested <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;div&gt;</code> containers with thousands of unused inline CSS rules. Mobile browsers struggle to calculate DOM layout trees with thousands of nodes, resulting in severe layout jitter and sluggish scrolling.</p>
     <p>Crafting semantic, modern CSS utilizing native Flexbox and CSS Grid achieves pixel-perfect responsive layouts with a fraction of the code weight, rendering at a buttery 60 frames per second on any smartphone.</p>
     <div style="overflow-x:auto; margin: 2.5rem 0;">
       <table style="width:100%; border-collapse:collapse; background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:var(--radius-sm); font-size:0.95rem;">

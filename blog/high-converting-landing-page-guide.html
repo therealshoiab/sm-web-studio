@@ -108,6 +108,18 @@
     .article-content p:first-child {
       margin-top: 0 !important;
     }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
     .article-content h2 {
       color: var(--text-primary);
       font-size: clamp(1.45rem, 2.8vw, 1.95rem);
@@ -271,7 +283,7 @@
         <span>&bull;</span>
         <span>Srinagar, Jammu & Kashmir</span>
         <span>&bull;</span>
-        <span style="color:var(--accent-1); font-weight:600;">2,139 words</span>
+        <span style="color:var(--accent-1); font-weight:600;">2,141 words</span>
       </div>
     </header>
 
@@ -337,7 +349,7 @@
     <h2>Mobile Thumb-Zone Ergonomics and Tactile Responsiveness</h2>
     <p>Over 80% of landing page visitors in India browse using one hand on a smartphone. The natural reach of the thumb dictates where interactive elements should sit.</p>
     <p>Critical action triggers—like 'Call Now', 'Book on WhatsApp', or sticky buy buttons—must anchor to the bottom of the mobile screen rather than hiding in the top-right corner where thumbs cannot comfortably reach.</p>
-    <p>Tactile feedback is equally crucial: buttons should provide subtle active-state scaling (`transform: scale(0.98)`), loading spinners during submission to indicate process state, and instantaneous confirmation banners celebrating successful submission.</p>
+    <p>Tactile feedback is equally crucial: buttons should provide subtle active-state scaling (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">transform: scale(0.98)</code>), loading spinners during submission to indicate process state, and instantaneous confirmation banners celebrating successful submission.</p>
     <h2>The Scientific A/B Testing Framework for Relentless CRO</h2>
     <p>Never assume you know what will convert best without empirical data. A disciplined conversion rate optimization (CRO) process involves systematic A/B testing of single variables.</p>
     <p>Test headline angles (Pain-point focused vs. Aspirational outcome focused). Test primary CTA button colors and copy. Test social proof positioning (placing client logos above the fold vs. below the primary problem section).</p>

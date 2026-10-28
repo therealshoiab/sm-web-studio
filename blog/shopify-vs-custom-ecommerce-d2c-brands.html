@@ -108,6 +108,18 @@
     .article-content p:first-child {
       margin-top: 0 !important;
     }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
     .article-content h2 {
       color: var(--text-primary);
       font-size: clamp(1.45rem, 2.8vw, 1.95rem);
@@ -287,11 +299,11 @@
     </div>
     <h2>The Mobile Performance Penalty of the Shopify Liquid Architecture</h2>
     <p>Performance is the silent killer of e-commerce conversions. In India, where over 82% of online shopping happens on mobile devices over cellular networks, every 100 milliseconds of latency degrades checkout conversions by 7%.</p>
-    <p>Every app installed on a Shopify store injects its own external JavaScript files, tracking pixels, and CSS stylesheets into the `theme.liquid` header. As your store grows, your web pages become burdened with 40 to 60 redundant HTTP requests. The browser struggles to execute megabytes of unminified script, resulting in sluggish Total Blocking Time (TBT) and erratic Cumulative Layout Shifts (CLS).</p>
+    <p>Every app installed on a Shopify store injects its own external JavaScript files, tracking pixels, and CSS stylesheets into the <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">theme.liquid</code> header. As your store grows, your web pages become burdened with 40 to 60 redundant HTTP requests. The browser struggles to execute megabytes of unminified script, resulting in sluggish Total Blocking Time (TBT) and erratic Cumulative Layout Shifts (CLS).</p>
     <p>On Google PageSpeed Insights, typical Shopify D2C stores score between 28 and 45 on mobile devices. In contrast, a bespoke custom-coded storefront engineered with vanilla JavaScript, modern micro-interactions, and pre-compiled static assets consistently scores 95 to 100, loading in under 800 milliseconds.</p>
     <h2>Checkout Optimization: The Indian Consumer Psychology Battleground</h2>
     <p>The checkout experience in India is fundamentally different from Western markets. Indian consumers demand frictionless 1-click UPI payments, instant OTP mobile login without passwords, clear COD terms, and pin-code verification to confirm delivery timelines to tier-2 and tier-3 cities.</p>
-    <p>On standard Shopify tiers (Basic and Shopify plan), the checkout is a closed, proprietary black box. You cannot modify the core checkout script, customize the step sequencing, or eliminate redundant billing address fields that introduce massive friction for UPI buyers. Only Shopify Plus merchants paying upwards of $2,000 (₹1,65,000+) per month gain access to `checkout.liquid` customization.</p>
+    <p>On standard Shopify tiers (Basic and Shopify plan), the checkout is a closed, proprietary black box. You cannot modify the core checkout script, customize the step sequencing, or eliminate redundant billing address fields that introduce massive friction for UPI buyers. Only Shopify Plus merchants paying upwards of $2,000 (₹1,65,000+) per month gain access to <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">checkout.liquid</code> customization.</p>
     <p>With a custom-engineered web application, you own the checkout architecture completely. You can implement instantaneous WhatsApp OTP authentication, integrate native Razorpay or Cashfree UPI Intent flows that launch Google Pay directly on the phone, and dynamically charge a ₹99 advance deposit on COD orders to virtually eliminate Return to Origin (RTO) losses.</p>
     <div style="overflow-x:auto; margin: 2.5rem 0;">
       <table style="width:100%; border-collapse:collapse; background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:var(--radius-sm); font-size:0.95rem;">

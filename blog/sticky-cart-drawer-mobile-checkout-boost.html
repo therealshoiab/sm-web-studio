@@ -108,6 +108,18 @@
     .article-content p:first-child {
       margin-top: 0 !important;
     }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
     .article-content h2 {
       color: var(--text-primary);
       font-size: clamp(1.45rem, 2.8vw, 1.95rem);
@@ -271,15 +283,15 @@
         <span>&bull;</span>
         <span>Srinagar, Jammu & Kashmir</span>
         <span>&bull;</span>
-        <span style="color:var(--accent-1); font-weight:600;">2,123 words</span>
+        <span style="color:var(--accent-1); font-weight:600;">2,131 words</span>
       </div>
     </header>
 
     <article class="article-content">
-    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-primary); margin-top: 0; margin-bottom: 2rem; font-weight: 400;">In modern e-commerce, the transition between product discovery and checkout is where the vast majority of sales are lost. Traditional e-commerce themes that redirect users to an isolated `/cart` page create jarring friction that kills mobile buying momentum. Here is the engineering guide to building a high-converting slide-out sticky cart drawer that boosts average order value and checkout completion.</p>
+    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-primary); margin-top: 0; margin-bottom: 2rem; font-weight: 400;">In modern e-commerce, the transition between product discovery and checkout is where the vast majority of sales are lost. Traditional e-commerce themes that redirect users to an isolated <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">/cart</code> page create jarring friction that kills mobile buying momentum. Here is the engineering guide to building a high-converting slide-out sticky cart drawer that boosts average order value and checkout completion.</p>
 
     <h2>The Friction of the Traditional Cart Redirect Page</h2>
-    <p>Consider the conventional e-commerce flow: a shopper finds an item they like and taps 'Add to Cart'. The browser pauses, white-screens, and reloads an entirely new page: `domain.com/cart`. The shopper has been abruptly ripped out of their shopping flow.</p>
+    <p>Consider the conventional e-commerce flow: a shopper finds an item they like and taps 'Add to Cart'. The browser pauses, white-screens, and reloads an entirely new page: <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">domain.com/cart</code>. The shopper has been abruptly ripped out of their shopping flow.</p>
     <p>If they want to continue browsing, they have to hit the back button or navigate back to the catalog. Every additional page load over mobile cellular networks introduces latency, decision fatigue, and abandonment opportunities.</p>
     <p>In contrast, leading direct-to-consumer brands utilize slide-out sticky cart drawers (mini-carts). When a shopper adds an item, an elegant glassmorphic drawer glides smoothly into view from the right, providing immediate visual confirmation while keeping the user grounded on the current page.</p>
     <div class="article-callout">
@@ -342,13 +354,13 @@
     </div>
     <h2>Technical Implementation: Lightweight Asynchronous State Management</h2>
     <p>Building a high-performance cart drawer requires clean frontend state management. You do not need bloated external state libraries to manage a shopping cart.</p>
-    <p>We engineer cart drawers using native JavaScript CustomEvents and lightweight `localStorage` synchronization. When an item is added, an event fires: the drawer slides open via hardware-accelerated CSS `transform: translateX(0)`, subtotals recalculate in memory, and the UI updates in under 16 milliseconds.</p>
+    <p>We engineer cart drawers using native JavaScript CustomEvents and lightweight <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">localStorage</code> synchronization. When an item is added, an event fires: the drawer slides open via hardware-accelerated CSS <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">transform: translateX(0)</code>, subtotals recalculate in memory, and the UI updates in under 16 milliseconds.</p>
     <p>Background cart state syncs silently with server-side sessions via lightweight fetch requests, ensuring zero data loss if the browser tab closes.</p>
     <h2>Accessibility and Focus Management in Drawers</h2>
     <p>A great cart drawer must be accessible to all users. When the drawer opens, keyboard focus should trap smoothly within the drawer, preventing background page scrolling.</p>
-    <p>Pressing the `Escape` key or tapping the darkened translucent backdrop must close the drawer gracefully. Ensure all quantity buttons and close triggers feature descriptive `aria-label` attributes for screen reader compatibility.</p>
+    <p>Pressing the <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">Escape</code> key or tapping the darkened translucent backdrop must close the drawer gracefully. Ensure all quantity buttons and close triggers feature descriptive <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">aria-label</code> attributes for screen reader compatibility.</p>
     <h2>CRO Case Study: How a D2C Wellness Brand Recovered 22% in Dropped Mobile Sales with a Sticky Drawer</h2>
-    <p>A scaling direct-to-consumer nutritional supplement and herbal tea brand in India was processing over 5,000 monthly transactions. However, their traditional e-commerce setup routed users to a standalone, full-page cart URL (`/cart`) every time an item was added. On mobile devices, loading this separate page took 2.8 seconds, breaking the customer's browsing momentum.</p>
+    <p>A scaling direct-to-consumer nutritional supplement and herbal tea brand in India was processing over 5,000 monthly transactions. However, their traditional e-commerce setup routed users to a standalone, full-page cart URL (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">/cart</code>) every time an item was added. On mobile devices, loading this separate page took 2.8 seconds, breaking the customer's browsing momentum.</p>
     <p>Over 38% of shoppers who added an item to their cart never proceeded to checkout: they got frustrated by page reloads, forgot what else they were looking for, or bounced when the cart page displayed unexpected shipping fees. The brand replaced their multi-page cart with an instantaneous, AJAX-powered slide-over sticky cart drawer.</p>
     <p>The impact on commercial metrics was instantaneous: checkout initiation velocity jumped by 22%, the overall store conversion rate climbed from 1.8% to 2.6%, and an integrated 1-click product recommendation slider inside the drawer boosted Average Order Value (AOV) by ₹340, generating over ₹17 Lakhs in additional monthly gross revenue.</p>
     <p>The wellness brand integrated an automated "Frequently Paired With" recommendation slider inside the drawer. Customers purchasing herbal tea were shown a 1-tap add option for organic saffron honey at a special 15% bundle discount. Over 32% of direct buyers added the recommended item, increasing average order value by ₹380.</p>
@@ -360,8 +372,8 @@
     <p>Frictionless Address Auto-Completion with Pin-Code Lookup: Typing lengthy delivery addresses on smartphone virtual keyboards causes high checkout abandonment. Our cart drawer integrates automated postal code lookups: when a customer enters their 6-digit PIN code, the city, state, and district populate automatically, reducing form completion time by 60%.</p>
     <h2>Cart Drawer State Architecture: Hardware-Accelerated Transforms and Optimistic UI Updates</h2>
     <p>High-performance cart drawers must operate with zero perceptible lag. We engineer custom drawer components utilizing optimistic UI state: when a customer taps 'Add to Cart', the item is immediately injected into the visual drawer DOM with a subtle micro-animation, while the background network API request synchronizes with the server asynchronously.</p>
-    <p>The drawer slide animation is powered by hardware-accelerated CSS transforms (`transform: translateX(0)`), completely bypassing browser paint recalculations and guaranteeing silky 60fps performance even on budget Android smartphones.</p>
-    <p>Our drawer state management is persisted using encrypted `localStorage` synchronized with serverless session tokens. If a mobile user accidentally closes their browser tab or receives an incoming phone call, their selected items, quantities, and applied coupons remain perfectly intact upon returning.</p>
+    <p>The drawer slide animation is powered by hardware-accelerated CSS transforms (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">transform: translateX(0)</code>), completely bypassing browser paint recalculations and guaranteeing silky 60fps performance even on budget Android smartphones.</p>
+    <p>Our drawer state management is persisted using encrypted <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">localStorage</code> synchronized with serverless session tokens. If a mobile user accidentally closes their browser tab or receives an incoming phone call, their selected items, quantities, and applied coupons remain perfectly intact upon returning.</p>
     <h2>The High-Converting Mobile Cart Drawer Audit Checklist</h2>
     <p>Audit your e-commerce cart drawer against these conversion-engineering benchmarks:</p>
     <ul style="margin-bottom: 2rem; padding-left: 1.5rem;">
@@ -383,7 +395,7 @@
     <h3>2. Can the cart drawer display discount coupon code inputs?</h3>
     <p>Yes. Shoppers can enter promotional coupon codes directly inside the drawer, seeing their savings applied to the subtotal in real time before jumping to checkout.</p>
     <h3>3. What happens if a shopper refreshes the page while items are in their cart?</h3>
-    <p>Cart items persist in the browser's `localStorage` and server session, automatically restoring their cart items and progress bar position.</p>
+    <p>Cart items persist in the browser's <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">localStorage</code> and server session, automatically restoring their cart items and progress bar position.</p>
     <h3>4. Can we customize the free shipping threshold for different countries or states?</h3>
     <p>Yes. The progress bar threshold can dynamically adjust based on the customer's detected geolocation or selected shipping destination.</p>
     <h3>5. Does the cart drawer support Cash on Delivery (COD) indicators?</h3>
@@ -397,7 +409,7 @@
     <h3>9. Can a cart drawer integrate with native UPI 1-click checkout buttons?</h3>
     <p>Yes. We embed direct Google Pay and PhonePe fast-checkout buttons directly inside the cart drawer, allowing mobile shoppers to complete payment in under 10 seconds without navigating traditional multi-step checkout forms.</p>
     <h3>10. Will a slide-over cart drawer interfere with mobile viewport scrolling?</h3>
-    <p>No. When the cart drawer opens, our JavaScript adds an active modal class that locks background body scrolling (`overflow: hidden; touch-action: none;`), ensuring smooth, isolated scrolling inside the drawer without body scroll bleed.</p>
+    <p>No. When the cart drawer opens, our JavaScript adds an active modal class that locks background body scrolling (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">overflow: hidden; touch-action: none;</code>), ensuring smooth, isolated scrolling inside the drawer without body scroll bleed.</p>
     <h3>11. How does an instant cart drawer impact server resource consumption during high-traffic sales?</h3>
     <p>Because cart actions are handled via lightweight client-side state and optimized REST/GraphQL endpoints, server CPU load is up to 75% lower than traditional full-page cart refreshes, ensuring total stability during viral flash sales.</p>
     <h2>Checkout Acceleration Architecture: Engineering High-Converting Mobile Cart Drawers</h2>

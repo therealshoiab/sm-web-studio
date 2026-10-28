@@ -108,6 +108,18 @@
     .article-content p:first-child {
       margin-top: 0 !important;
     }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
     .article-content h2 {
       color: var(--text-primary);
       font-size: clamp(1.45rem, 2.8vw, 1.95rem);
@@ -271,7 +283,7 @@
         <span>&bull;</span>
         <span>Srinagar, Jammu & Kashmir</span>
         <span>&bull;</span>
-        <span style="color:var(--accent-1); font-weight:600;">2,124 words</span>
+        <span style="color:var(--accent-1); font-weight:600;">2,130 words</span>
       </div>
     </header>
 
@@ -292,10 +304,10 @@
     <h2>The 5 Crucial HTTP Security Headers Every Website Needs</h2>
     <p>HTTP security headers are specialized directives passed by your web server that instruct the visitor's browser on how to securely handle your website's content, preventing entire classes of cyberattacks.</p>
     <p>1. Content Security Policy (CSP): The ultimate defense against Cross-Site Scripting (XSS). A strict CSP explicitly defines authorized domains for scripts, styles, and fonts, blocking malicious third-party script injection.</p>
-    <p>2. Strict-Transport-Security (HSTS): Enforces HTTPS connections permanently: `max-age=31536000; includeSubDomains; preload`, preventing man-in-the-middle downgrade attacks.</p>
-    <p>3. X-Frame-Options: Set to `DENY` or `SAMEORIGIN`, preventing attackers from embedding your website inside invisible iframes on malicious sites to execute clickjacking attacks.</p>
-    <p>4. X-Content-Type-Options: Set to `nosniff`, stopping browsers from MIME-sniffing files away from their declared content type.</p>
-    <p>5. Referrer-Policy: Set to `strict-origin-when-cross-origin`, protecting sensitive user URL query parameters when navigating externally.</p>
+    <p>2. Strict-Transport-Security (HSTS): Enforces HTTPS connections permanently: <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">max-age=31536000; includeSubDomains; preload</code>, preventing man-in-the-middle downgrade attacks.</p>
+    <p>3. X-Frame-Options: Set to <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">DENY</code> or <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">SAMEORIGIN</code>, preventing attackers from embedding your website inside invisible iframes on malicious sites to execute clickjacking attacks.</p>
+    <p>4. X-Content-Type-Options: Set to <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">nosniff</code>, stopping browsers from MIME-sniffing files away from their declared content type.</p>
+    <p>5. Referrer-Policy: Set to <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">strict-origin-when-cross-origin</code>, protecting sensitive user URL query parameters when navigating externally.</p>
     <h3>Content Security Policy (CSP) Engineering</h3>
     <p>Restricting script execution strictly to verified sources stops malicious code from stealing customer checkout data.</p>
     <h3>HSTS Preload List Inclusion</h3>
@@ -327,7 +339,7 @@
           </tr>
           <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
             <td style="padding:0.9rem 1.25rem; color:var(--text-primary); font-weight:600;">Brute-Force Admin Login</td>
-            <td style="padding:0.9rem 1.25rem; color:var(--text-secondary);">Targeted at `/wp-admin` 24/7 by bots</td>
+            <td style="padding:0.9rem 1.25rem; color:var(--text-secondary);">Targeted at <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">/wp-admin</code> 24/7 by bots</td>
             <td style="padding:0.9rem 1.25rem; color:var(--text-secondary);">Zero risk (no exposed public administrative login URL)</td>
           </tr>
           <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
@@ -363,16 +375,16 @@
     <p>Defending Against Distributed Denial of Service (DDoS) Attacks: High-profile business websites and scaling e-commerce platforms are frequent targets for extortion-driven DDoS attacks designed to knock servers offline during peak sales. Deploying cloud-based edge proxies with unmetered DDoS mitigation absorbs volumetric layer-7 HTTP flood attacks at the edge, ensuring uninterrupted storefront operations.</p>
     <h2>Edge Security Architecture: WAF Rule Tuning, Strict CSP, and Zero-Trust Middleware</h2>
     <p>We deploy web platforms behind enterprise edge proxies (such as Cloudflare or AWS CloudFront) configured with strict Web Application Firewall rules. Incoming traffic is inspected at the edge for known OWASP Top 10 vulnerabilities (SQL injection, XSS, remote code execution) before requests ever reach your origin server.</p>
-    <p>Our HTTP response pipelines enforce a strict Content Security Policy (`default-src 'self'`) with cryptographic nonces for necessary inline scripts, preventing unauthorized third-party scripts from executing. TLS configurations enforce TLS 1.3 exclusively with modern elliptic-curve cipher suites (ECDHE-ECDSA-AES128-GCM-SHA256), earning a perfect A+ rating on Qualys SSL Labs.</p>
+    <p>Our HTTP response pipelines enforce a strict Content Security Policy (<code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">default-src 'self'</code>) with cryptographic nonces for necessary inline scripts, preventing unauthorized third-party scripts from executing. TLS configurations enforce TLS 1.3 exclusively with modern elliptic-curve cipher suites (ECDHE-ECDSA-AES128-GCM-SHA256), earning a perfect A+ rating on Qualys SSL Labs.</p>
     <p>Our security pipeline implements automated TLS certificate pre-flight checks and real-time DNS CAA (Certificate Authority Authorization) records, strictly restricting certificate issuance to authorized authorities and eliminating unauthorized certificate issuance risks.</p>
     <h2>The Commercial Web Application Security Hardening Checklist</h2>
     <p>Audit your digital infrastructure against these essential enterprise cybersecurity standards:</p>
     <ul style="margin-bottom: 2rem; padding-left: 1.5rem;">
-      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Strict Transport Security (HSTS): Enforce `max-age=31536000; includeSubDomains; preload` to mandate HTTPS connections permanently.</li>
+      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Strict Transport Security (HSTS): Enforce <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">max-age=31536000; includeSubDomains; preload</code> to mandate HTTPS connections permanently.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Content Security Policy (CSP): Deploy strict script and object source directives to neutralize Cross-Site Scripting (XSS) vectors.</li>
-      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> X-Frame-Options: Set `DENY` or `SAMEORIGIN` headers to permanently prevent clickjacking and iframe impersonation attacks.</li>
+      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> X-Frame-Options: Set <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">DENY</code> or <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">SAMEORIGIN</code> headers to permanently prevent clickjacking and iframe impersonation attacks.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Rate-Limiting on API Endpoints: Restrict login and checkout attempts to 5 requests per minute per IP address to block brute-force attacks.</li>
-      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Cryptographic CSRF Tokens: Enforce anti-forgery tokens and `SameSite=Lax` or `SameSite=Strict` cookie attributes on all state-changing forms.</li>
+      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Cryptographic CSRF Tokens: Enforce anti-forgery tokens and <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">SameSite=Lax</code> or <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">SameSite=Strict</code> cookie attributes on all state-changing forms.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Edge Web Application Firewall (WAF): Block automated scraping bots, credential-stuffing crawlers, and known vulnerability scanners.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Zero-Trust Database Credentials: Store API secrets in encrypted environment variables; never commit private keys to Git repositories.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Automated Vulnerability Scanning: Run weekly automated dependency and vulnerability scans using npm audit and Snyk in CI/CD pipelines.</li>

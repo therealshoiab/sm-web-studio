@@ -108,6 +108,18 @@
     .article-content p:first-child {
       margin-top: 0 !important;
     }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
+    .article-content > *:first-child,
+    .article-content h2:first-child,
+    .article-content h2:first-of-type,
+    .article-content p:first-child {
+      margin-top: 0 !important;
+    }
     .article-content h2 {
       color: var(--text-primary);
       font-size: clamp(1.45rem, 2.8vw, 1.95rem);
@@ -291,7 +303,7 @@
     <p>Step 2: URL & Taxonomy Cataloging. Crawl your entire domain using tools like Screaming Frog to catalog every single indexed URL, category archive, and tag page, ensuring no indexed content is lost or broken during the transition.</p>
     <h2>Phase 2: 1-to-1 301 Redirect Architecture: Preserving Google Rankings</h2>
     <p>The greatest terror business owners face during migration is losing their hard-won organic search rankings. This catastrophe only occurs when sloppy developers change URL structures without establishing 301 Permanent Redirects.</p>
-    <p>We construct a comprehensive 1-to-1 redirect map: if your legacy WordPress post was located at `/2023/11/kashmir-pashmina-guide.html`, our edge routing rules redirect crawlers and human visitors seamlessly to `/blog/kashmir-pashmina-guide` using HTTP 301 status codes.</p>
+    <p>We construct a comprehensive 1-to-1 redirect map: if your legacy WordPress post was located at <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">/2023/11/kashmir-pashmina-guide.html</code>, our edge routing rules redirect crawlers and human visitors seamlessly to <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">/blog/kashmir-pashmina-guide</code> using HTTP 301 status codes.</p>
     <p>A 301 redirect explicitly instructs Googlebot that the resource has permanently moved, passing 95% to 99% of historical link equity and search authority to your new high-speed custom page.</p>
     <h3>Automated Regex Redirect Mapping</h3>
     <p>Configuring server-level rewrite rules ensures that even complex nested URL hierarchies map smoothly with zero broken links.</p>
@@ -299,7 +311,7 @@
     <p>Preserving existing page title tags, meta descriptions, and schema structured data guarantees uninterrupted search visibility.</p>
     <h2>Phase 3: Rebuilding the Frontend with Semantic Vanilla Architecture</h2>
     <p>During the migration, we strip away thousands of lines of bloated, auto-generated page builder div soup, replacing it with handcrafted, semantic HTML5, modern modular CSS, and lightweight vanilla JavaScript.</p>
-    <p>All visual assets are converted to modern AVIF and WebP formats, reducing media payloads by 80%. Critical above-the-fold styles are inlined in the `<head>` to eliminate render-blocking warnings completely.</p>
+    <p>All visual assets are converted to modern AVIF and WebP formats, reducing media payloads by 80%. Critical above-the-fold styles are inlined in the <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">&lt;head&gt;</code> to eliminate render-blocking warnings completely.</p>
     <p>Instead of a 4MB page weight with 60 external script requests, your new web application weighs less than 250KB and loads in the blink of an eye.</p>
     <div style="overflow-x:auto; margin: 2.5rem 0;">
       <table style="width:100%; border-collapse:collapse; background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:var(--radius-sm); font-size:0.95rem;">
@@ -375,7 +387,7 @@
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Complete Legacy Site URL Crawl: Export all indexed URLs, canonical tags, and metadata to build a comprehensive redirect matrix.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Edge-Level 301 Redirect Mapping: Deploy 1-to-1 permanent redirects at the CDN edge to preserve historical Google ranking equity.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Database Sanitization & Export: Extract customer records, order histories, and product catalogs into clean open-standard JSON/CSV files.</li>
-      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Zero-Downtime Staging Sandboxing: Develop and test the custom architecture on an isolated staging domain with `noindex` headers.</li>
+      <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Zero-Downtime Staging Sandboxing: Develop and test the custom architecture on an isolated staging domain with <code style="background:rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:0.15rem 0.45rem; border-radius:4px; font-size:0.9em; color:var(--accent-1); font-family:monospace;">noindex</code> headers.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Core Web Vitals Verification: Ensure every newly engineered template scores 95+ on Google PageSpeed before live cutover.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> Tag Manager & Analytics Continuity: Replicate Google Analytics 4, Meta Pixel, and conversion tracking events identically.</li>
       <li style="margin-bottom: 0.85rem; line-height: 1.7;"><strong>Verified Benchmark:</strong> DNS TTL Pre-Cutover Lowering: Lower DNS Time-to-Live values to 300 seconds 72 hours prior to cutover for instant propagation.</li>
